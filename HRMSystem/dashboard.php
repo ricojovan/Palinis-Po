@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>srtdash - SEO Dashboard</title>
+    <title>HRM - Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -216,88 +216,39 @@
                         <div class="horizontal-menu">
                             <nav>
                                 <ul id="nav_menu">
-                                    <li>
-                                        <a href="javascript:void(0)"><i class="ti-dashboard"></i><span>dashboard</span></a>
-                                        <ul class="submenu">
-                                            <li><a href="index.html">ICO dashboard</a></li>
-                                            <li><a href="index2.html">Ecommerce dashboard</a></li>
-                                            <li><a href="index3.html">SEO dashboard</a></li>
-                                        </ul>
-                                    </li>
                                     <li class="active">
-                                        <a href="javascript:void(0)"><i class="ti-layout-sidebar-left"></i><span>Sidebar
-                                                Types</span></a>
-                                        <ul class="submenu">
-                                            <li><a href="index.html">Left Sidebar</a></li>
-                                            <li class="active"><a href="index3-horizontalmenu.html">Horizontal Sidebar</a></li>
-                                        </ul>
+                                        <a href="#"><i class="ti-dashboard"></i><span>dashboard</span></a>
                                     </li>
-                                    <li>
-                                        <a href="javascript:void(0)"><i class="ti-pie-chart"></i><span>Charts</span></a>
-                                        <ul class="submenu">
-                                            <li><a href="barchart.html">bar chart</a></li>
-                                            <li><a href="linechart.html">line Chart</a></li>
-                                            <li><a href="piechart.html">pie chart</a></li>
-                                        </ul>
-                                    </li>
+                                    
+                                    
                                     <li class="mega-menu">
-                                        <a href="javascript:void(0)"><i class="ti-palette"></i><span>UI Features</span></a>
+                                        <a href="javascript:void(0)"><i class="ti-palette"></i><span>Employee List</span></a>
                                         <ul class="submenu">
-                                            <li><a href="accordion.html">Accordion</a></li>
-                                            <li><a href="alert.html">Alert</a></li>
-                                            <li><a href="badge.html">Badge</a></li>
-                                            <li><a href="button.html">Button</a></li>
-                                            <li><a href="button-group.html">Button Group</a></li>
-                                            <li><a href="cards.html">Cards</a></li>
-                                            <li><a href="dropdown.html">Dropdown</a></li>
-                                            <li><a href="list-group.html">List Group</a></li>
-                                            <li><a href="media-object.html">Media Object</a></li>
-                                            <li><a href="modal.html">Modal</a></li>
-                                            <li><a href="pagination.html">Pagination</a></li>
-                                            <li><a href="popovers.html">Popover</a></li>
-                                            <li><a href="progressbar.html">Progressbar</a></li>
-                                            <li><a href="tab.html">Tab</a></li>
-                                            <li><a href="typography.html">Typography</a></li>
-                                            <li><a href="form.html">Form</a></li>
-                                            <li><a href="grid.html">grid system</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="mega-menu">
-                                        <a href="javascript:void(0)"><i class="ti-layers-alt"></i> <span>Pages</span></a>
-                                        <ul class="submenu">
-                                            <li><a href="login.html">Login</a></li>
-                                            <li><a href="login2.html">Login 2</a></li>
-                                            <li><a href="login3.html">Login 3</a></li>
-                                            <li><a href="register.html">Register</a></li>
-                                            <li><a href="register2.html">Register 2</a></li>
-                                            <li><a href="register3.html">Register 3</a></li>
-                                            <li><a href="register4.html">Register 4</a></li>
-                                            <li><a href="screenlock.html">Lock Screen</a></li>
-                                            <li><a href="screenlock2.html">Lock Screen 2</a></li>
-                                            <li><a href="reset-pass.html">reset password</a></li>
-                                            <li><a href="pricing.html">Pricing</a></li>
-                                            <li><a href="404.html">Error 404</a></li>
-                                            <li><a href="500.html">Error 500</a></li>
-                                            <li><a href="invoice.html"><i class="ti-receipt"></i> <span>Invoice Summary</span></a></li>
+                                            <li><a href="#">Employee 1</a></li>
+                                            <li><a href="#">Employee 2</a></li>
+                                            <li><a href="#">Employee 3</a></li>
+                                            <li><a href="#">Employee 4</a></li>
+                                            <li><a href="#">Employee 5</a></li>
+                                            <li><a href="#">Employee 6</a></li>
+                                            <li><a href="#">Employee 7</a></li>
+                                            <li><a href="#">Employee 8</a></li>
+                                            <li><a href="#">Employee 9</a></li>
+                                            <li><a href="#">Employee 10</a></li>
+                                            <li><a href="#">Employee 11</a></li>
+                                            <li><a href="#">Employee 12</a></li>
+                                            <li><a href="#">Employee 13</a></li>
+                                            <li><a href="#">Employee 14</a></li>
+                                            <li><a href="#">Employee 15</a></li>
+                                            <li><a href="#">Employee 16</a></li>
+                                            <li><a href="#">Employee 17</a></li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)"><i class="ti-slice"></i><span>icons</span></a>
-                                        <ul class="submenu">
-                                            <li><a href="fontawesome.html">fontawesome icons</a></li>
-                                            <li><a href="themify.html">themify icons</a></li>
-                                        </ul>
+                                        <a href="#"><i class="ti-map-alt"></i> <span>Attendance List</span></a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)"><i class="fa fa-table"></i>
-                                            <span>Tables</span></a>
-                                        <ul class="submenu">
-                                            <li><a href="table-basic.html">basic table</a></li>
-                                            <li><a href="table-layout.html">table layout</a></li>
-                                            <li><a href="datatable.html">datatable</a></li>
-                                        </ul>
+                                        <a href="#"><i class="ti-map-alt"></i> <span>History</span></a>
                                     </li>
-                                    <li><a href="maps.html"><i class="ti-map-alt"></i> <span>maps</span></a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -330,8 +281,8 @@
                                 <div class="card">
                                     <div class="seo-fact sbg1">
                                         <div class="p-4 d-flex justify-content-between align-items-center">
-                                            <div class="seofct-icon"><i class="ti-thumb-up"></i> Likes</div>
-                                            <h2>2,315</h2>
+                                            <div class="seofct-icon"><i class="fa fa-user"></i> Employees</div>
+                                            <h2>17</h2>
                                         </div>
                                         <canvas id="seolinechart1" height="50"></canvas>
                                     </div>
@@ -341,14 +292,15 @@
                                 <div class="card">
                                     <div class="seo-fact sbg2">
                                         <div class="p-4 d-flex justify-content-between align-items-center">
-                                            <div class="seofct-icon"><i class="ti-share"></i> Share</div>
-                                            <h2>3,984</h2>
+                                            <div class="seofct-icon"><i class='fa fa-check-circle'></i> Available Employee</div>
+                                            <h2>15</h2>
                                         </div>
                                         <canvas id="seolinechart2" height="50"></canvas>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 mb-3 mb-lg-0">
+
+                            <!-- <div class="col-md-6 mb-3 mb-lg-0">
                                 <div class="card">
                                     <div class="seo-fact sbg3">
                                         <div class="p-4 d-flex justify-content-between align-items-center">
@@ -357,13 +309,14 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
+
                             <div class="col-md-6">
                                 <div class="card">
                                     <div class="seo-fact sbg4">
                                         <div class="p-4 d-flex justify-content-between align-items-center">
-                                            <div class="seofct-icon">New Users</div>
-                                            <canvas id="seolinechart4" height="60"></canvas>
+                                            <div class="seofct-icon">New Employee</div>
+                                            <h2>5</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -375,7 +328,7 @@
                     <div class="col-lg-4 mt-5">
                         <div class="card">
                             <div class="card-body pb-0">
-                                <h4 class="header-title">Social ads Campain</h4>
+                                <h4 class="header-title">Work Summary</h4>
                                 <div id="socialads" style="height: 245px;"></div>
                             </div>
                         </div>

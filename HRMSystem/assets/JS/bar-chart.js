@@ -774,7 +774,7 @@ if ($('#socialads').length) {
         },
         title: false,
         xAxis: {
-            categories: ['FB', 'TW', 'INS', 'G+', 'LINKD']
+            categories: ['SUN', 'MON', 'TUES', 'WEDS', 'THURS', 'FRI', 'SAT']
         },
         colors: ['#F5CA3F', '#E5726D', '#12C599', '#5F73F2'],
         yAxis: {

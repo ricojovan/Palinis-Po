@@ -232,7 +232,7 @@
 /*-------------------- 2.1.1 Horizontal Menu -------------------*/
 
 .body-bg {
-    background: #F3F8FB;
+    background: #f3fbfb;
 }
 
 .horizontal-main-wrapper {
@@ -281,10 +281,12 @@
 
 .horizontal-menu ul li a {
     display: block;
-    font-size: 13px;
+    font-size: 17px;
     padding: 10px 20px;
     color: #000000;
     text-transform: capitalize;
+    font-family:Arial, Helvetica, sans-serif;
+    
 }
 
 .horizontal-menu ul li:hover>a,
