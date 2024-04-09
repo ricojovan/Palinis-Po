@@ -26,10 +26,6 @@
                 <button>Sign Up</button>
             </form>
         </div> -->
-
-       
-
-
         <!-- <div class="form-container sign-in-container">
             <form action="#">
                 <h1>Sign in</h1>

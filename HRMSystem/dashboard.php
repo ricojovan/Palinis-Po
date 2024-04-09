@@ -24,7 +24,6 @@
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body class="body-bg">
-<<<<<<< HEAD
 
                             <?php
                             session_start(); // Start session if not already started
@@ -40,9 +39,6 @@
 
 
     <!--[if lt IE 8]>
-=======
-    <!-- [if lt IE 8]>
->>>>>>> 4c73bd91f04e27c201be2b12c9d099450963e7e2
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif] -->
 
