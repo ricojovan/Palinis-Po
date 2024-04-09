@@ -25,6 +25,20 @@
 </head>
 
 <body class="body-bg">
+
+                            <?php
+                            session_start(); // Start session if not already started
+
+                            if (!isset($_SESSION['username'])) {
+                            // Redirect to login if no username is found in session
+                            header("Location: login_and_sign-in_form.php");
+                            exit();
+                            }
+
+                            $username = $_SESSION['username'];
+                            ?>
+
+
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -192,17 +206,37 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="clearfix d-md-inline-block d-block">
+
+                        <!-- <div class="clearfix d-md-inline-block d-block">
                             <div class="user-profile m-0">
                                 <img class="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar">
                                 <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Kumkum Rai <i class="fa fa-angle-down"></i></h4>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="#">Message</a>
                                     <a class="dropdown-item" href="#">Settings</a>
-                                    <a class="dropdown-item" href="#">Log Out</a>
+                                    <a class="dropdown-item" href="login_and_sign-in_form.php">Log Out</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
+
+
+                        <!-- -------------TRYYYYYYYYYYYYYY-------------- -->
+
+
+                            <div class="clearfix d-md-inline-block d-block">
+                            <div class="user-profile m-0">
+                                <img class="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar">
+                                <h4 class="user-name dropdown-toggle" data-toggle="dropdown"><?php echo $username; ?><i class="fa fa-angle-down"></i></h4>
+                                <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Message</a>
+                                <a class="dropdown-item" href="#">Settings</a>
+                                <a class="dropdown-item" href="login_and_sign-in_form.php">Log Out</a>
+                                </div>
+                            </div>
+                            </div>
+
+
+                            <!-- ----------------TRYY---------------- -->
                     </div>
                 </div>
             </div>
