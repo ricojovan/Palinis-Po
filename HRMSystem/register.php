@@ -218,7 +218,7 @@
                             <nav>
                                 <ul id="nav_menu">
                                     <li class="active">
-                                        <a href="#"><i class='fa fa-bar-chart-o'></i><span>dashboard</span></a>
+                                        <a href="dashboard.php"><i class='fa fa-bar-chart-o'></i><span>dashboard</span></a>
                                     </li>
                                     
                                     
@@ -274,219 +274,127 @@
             </div>
         </div>
         <!-- header area end -->
-        <!-- page title area end -->
-        <div class="main-content-inner">
-            <div class="container">
-                <div class="row">
-                    <!-- seo fact area start -->
-                    <div class="col-lg-8">
-                        <div class="row">
-                            <div class="col-md-6 mt-5 mb-3">
-                                <div class="card">
-                                    <div class="seo-fact sbg1">
-                                        <div class="p-4 d-flex justify-content-between align-items-center">
-                                            <div class="seofct-icon"><i class="fa fa-user"></i> Employees</div>
-                                            <h2>17</h2>
-                                        </div>
-                                        <canvas id="seolinechart1" height="50"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mt-md-5 mb-3">
-                                <div class="card">
-                                    <div class="seo-fact sbg2">
-                                        <div class="p-4 d-flex justify-content-between align-items-center">
-                                            <div class="seofct-icon"><i class='fa fa-check-circle'></i> Available Employee</div>
-                                            <h2>15</h2>
-                                        </div>
-                                        <canvas id="seolinechart2" height="50"></canvas>
-                                    </div>
-                                </div>
-                            </div>
+        
 
-                            <!-- <div class="col-md-6 mb-3 mb-lg-0">
-                                <div class="card">
-                                    <div class="seo-fact sbg3">
-                                        <div class="p-4 d-flex justify-content-between align-items-center">
-                                            <div class="seofct-icon">Impressions</div>
-                                            <canvas id="seolinechart3" height="60"></canvas>
+ <!-- Variable width content start -->
+ <div class="col-12 mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="header-title">Variable width content</div>
+                                <div class="row justify-content-md-center">
+                                    <div class="col col-lg-2">
+                                        <div class="grid-col">
+                                            1 of 3
+                                        </div>
+                                    </div>
+                                    <div class="col-md-auto">
+                                        <div class="grid-col">
+                                            Variable width content
+                                        </div>
+                                    </div>
+                                    <div class="col col-lg-2">
+                                        <div class="grid-col">
+                                            3 of 3
                                         </div>
                                     </div>
                                 </div>
-                            </div> -->
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="grid-col">
 
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="seo-fact sbg4">
-                                        <div class="p-4 d-flex justify-content-between align-items-center">
-                                            <div class="seofct-icon">New Employee</div>
-                                            <h2>5</h2>
-                                        </div>
+                            <!-- Server side start -->
+                            <div class="col-12">
+                                <div class="card mt-5">
+                                    <div class="card-body">
+                                        <h4 class="header-title">Register Account</h4>
+                                        <form class="needs-validation" novalidate="">
+                                            <div class="form-row">
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="validationCustom01">First name</label>
+                                                    <input type="text" class="form-control" id="validationCustom01" placeholder="First name"  required="">
+                                                    <div class="valid-feedback">
+                                                        Looks good!
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="validationCustom02">Last name</label>
+                                                    <input type="text" class="form-control" id="validationCustom02" placeholder="Last name"  required="">
+                                                    <div class="valid-feedback">
+                                                        Looks good!
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="validationCustomUsername">Username</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                                        </div>
+                                                        <input type="text" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required="">
+                                                        <div class="invalid-feedback">
+                                                            Please choose a username.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="validationCustom03">Password</label>
+                                                    <input type="password" class="form-control" id="validationCustom03" placeholder="Password" required="">
+                                                    <div class="invalid-feedback">
+                                                        Please provide a password.
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 mb-3">
+                                                    <label for="validationCustom04">Cellphone Number</label>
+                                                    <input type="text" class="form-control" id="validationCustom04" placeholder="+63**********" value="+63" required="">
+                                                    <div class="invalid-feedback">
+                                                        Please provide a valid state.
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 mb-3">
+                                                    <label for="date-input">Date Hire</label>
+                                                    <input class="form-control" type="date" id="validationCustom05" value="2024-04-09" required="" >
+                                                    
+                                                    <div class="invalid-feedback">
+                                                        Please provide a valid zip.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required="">
+                                                    <label class="form-check-label" for="invalidCheck">
+                                                        Agree to terms and conditions
+                                                    </label>
+                                                    <div class="invalid-feedback">
+                                                        You must agree before submitting.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-primary" type="submit">Submit form</button>
+                                        </form>
                                     </div>
+                                </div>
+                            </div>
+                            <!-- Server side end -->
+                        </div>
+                    </div>
+                        <div class="col-md-auto">
+                            <div class="grid-col">
+                                Variable width content
+                            </div>
+                        </div>
+                            <div class="col col-lg-2">
+                                <div class="grid-col">
+                                            3 of 3
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- seo fact area end -->
-                    <!-- Social Campain area start -->
-                    <div class="col-lg-4 mt-5">
-                        <div class="card">
-                            <div class="card-body pb-0">
-                                <h4 class="header-title">Work Summary</h4>
-                                <div id="socialads" style="height: 245px;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Social Campain area end -->
-                    <!-- Statistics area start -->
-                    <div class="col-lg-8 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title">User Statistics</h4>
-                                <div id="user-statistics"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Statistics area end -->
-                    <!-- Advertising area start -->
-                    <div class="col-lg-4 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title">Advertising & Marketing</h4>
-                                <canvas id="seolinechart8" height="233"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Advertising area end -->
-                    <!-- sales area start -->
-                    <div class="col-xl-8 col-lg-8 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title">Sales</h4>
-                                <div id="salesanalytic"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- sales area end -->
-                    <!-- timeline area start -->
-                    <div class="col-xl-4 col-lg-4 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title">Timeline</h4>
-                                <div class="timeline-area">
-                                    <div class="timeline-task">
-                                        <div class="icon bg1">
-                                            <i class="fa fa-envelope"></i>
-                                        </div>
-                                        <div class="tm-title">
-                                            <h4>Rashed sent you an email</h4>
-                                            <span class="time"><i class="ti-time"></i>09:35</span>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-                                        </p>
-                                    </div>
-                                    <div class="timeline-task">
-                                        <div class="icon bg2">
-                                            <i class="fa fa-exclamation-triangle"></i>
-                                        </div>
-                                        <div class="tm-title">
-                                            <h4>Rashed sent you an email</h4>
-                                            <span class="time"><i class="ti-time"></i>09:35</span>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-                                        </p>
-                                    </div>
-                                    <div class="timeline-task">
-                                        <div class="icon bg2">
-                                            <i class="fa fa-exclamation-triangle"></i>
-                                        </div>
-                                        <div class="tm-title">
-                                            <h4>Rashed sent you an email</h4>
-                                            <span class="time"><i class="ti-time"></i>09:35</span>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-task">
-                                        <div class="icon bg3">
-                                            <i class="fa fa-bomb"></i>
-                                        </div>
-                                        <div class="tm-title">
-                                            <h4>Rashed sent you an email</h4>
-                                            <span class="time"><i class="ti-time"></i>09:35</span>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-                                        </p>
-                                    </div>
-                                    <div class="timeline-task">
-                                        <div class="icon bg3">
-                                            <i class="ti-signal"></i>
-                                        </div>
-                                        <div class="tm-title">
-                                            <h4>Rashed sent you an email</h4>
-                                            <span class="time"><i class="ti-time"></i>09:35</span>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- timeline area end -->
-                    <!-- map area start -->
-                    <div class="col-lg-5 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title">Marketing Area</h4>
-                                <div id="seomap"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- map area end -->
-                    <!-- testimonial area start -->
-                    <div class="col-lg-7 mt-5">
-                        <div class="card">
-                            <div class="card-body bg1">
-                                <h4 class="header-title text-white">Client Feadback</h4>
-                                <div class="testimonial-carousel owl-carousel">
-                                    <div class="tst-item">
-                                        <div class="tstu-img">
-                                            <img src="assets/images/team/team-author1.jpg" alt="author image">
-                                        </div>
-                                        <div class="tstu-content">
-                                            <h4 class="tstu-name">Abel Franecki</h4>
-                                            <span class="profsn">Designer</span>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae laborum ut nihil numquam a aliquam alias necessitatibus ipsa soluta quam!</p>
-                                        </div>
-                                    </div>
-                                    <div class="tst-item">
-                                        <div class="tstu-img">
-                                            <img src="assets/images/team/team-author2.jpg" alt="author image">
-                                        </div>
-                                        <div class="tstu-content">
-                                            <h4 class="tstu-name">Abel Franecki</h4>
-                                            <span class="profsn">Designer</span>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae laborum ut nihil numquam a aliquam alias necessitatibus ipsa soluta quam!</p>
-                                        </div>
-                                    </div>
-                                    <div class="tst-item">
-                                        <div class="tstu-img">
-                                            <img src="assets/images/team/team-author3.jpg" alt="author image">
-                                        </div>
-                                        <div class="tstu-content">
-                                            <h4 class="tstu-name">Abel Franecki</h4>
-                                            <span class="profsn">Designer</span>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae laborum ut nihil numquam a aliquam alias necessitatibus ipsa soluta quam!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- testimonial area end -->
                 </div>
             </div>
-        </div>
-        <!-- main content area end -->
+            <br><br><br>
+                    <!-- Variable width content end -->
         <!-- footer area start-->
         <footer>
             <div class="footer-area">
@@ -497,6 +405,7 @@
     </div>
     <!-- main wrapper start -->
     <!-- offset area start -->
+    
     <div class="offset-area">
         <div class="offset-close"><i class="ti-close"></i></div>
         <ul class="nav offset-menu-tab">
