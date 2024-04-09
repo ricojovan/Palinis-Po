@@ -217,12 +217,12 @@
                             <nav>
                                 <ul id="nav_menu">
                                     <li class="active">
-                                        <a href="#"><i class="ti-dashboard"></i><span>dashboard</span></a>
+                                        <a href="#"><i class='fa fa-bar-chart-o'></i><span>dashboard</span></a>
                                     </li>
                                     
                                     
                                     <li class="mega-menu">
-                                        <a href="javascript:void(0)"><i class="ti-palette"></i><span>Employee List</span></a>
+                                        <a href="#"><i class='fa fa-users'></i><span>Employee List</span></a>
                                         <ul class="submenu">
                                             <li><a href="#">Employee 1</a></li>
                                             <li><a href="#">Employee 2</a></li>
@@ -244,10 +244,13 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="ti-map-alt"></i> <span>Attendance List</span></a>
+                                        <a href="#"><i class='fa fa-th-list'></i> <span>Attendance List</span></a>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="ti-map-alt"></i> <span>History</span></a>
+                                        <a href="#"><i class='fa fa-history'></i><span>History</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class='fa fa-sign-in'></i><span>Register</span></a>
                                     </li>
                                 </ul>
                             </nav>

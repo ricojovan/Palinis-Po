@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,44 +6,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Radius - Signin/Signup</title>
+    <title>Login HRM - Signin/Signup</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/CSS/login-signin_styling.css">
 </head>
 
 <body>
+    
     <div class="container" id="container">
         <div class="form-container sign-up-container">
             <form action="#">
-                <h1>Create Account</h1>
-                <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <span>or use your email for registration</span>
+                <h1>Request Account</h1>
+                <span>this will notify the admin to create your account.</span>
                 <input type="text" placeholder="Name" />
                 <input type="email" placeholder="Email" />
                 <input type="password" placeholder="Password" />
                 <button>Sign Up</button>
             </form>
         </div>
+
+       
+
+
         <div class="form-container sign-in-container">
             <form action="#">
                 <h1>Sign in</h1>
-                <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <span>or use your account</span>
                 <input type="email" placeholder="Email" />
                 <input type="password" placeholder="Password" />
                 <a href="#">Forgot your password?</a>
                 <button>Sign In</button>
             </form>
         </div>
+
+        
+     
+
+
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
