@@ -15,7 +15,7 @@
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style2.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
 
   <!-- 
     - google font link
@@ -61,11 +61,11 @@
           </li>
 
           <li>
-            <a href="#skills" class="navbar-link" data-nav-link>Where We Server</a>
+            <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
           </li>
 
           <li>
-            <a href="#contact" class="navbar-link" data-nav-link>Pricing</a>
+            <a href="#pricing" class="navbar-link" data-nav-link>Pricing</a>
           </li>
 
           <li>
@@ -367,109 +367,7 @@ to meet your unique needs.
         </div>
       </section>
 
-
-
-
-
-      <!-- 
-        - #SKILLS
-      -->
-<!-- 
-      <section class="section skills" id="skills">
-        <div class="container">
-
-          <p class="section-subtitle">My Skills</p>
-
-          <h2 class="h2 section-title">I Develop Skills Regularly</h2>
-
-          <p class="section-text">
-            Dliquip ex ea commo do conse namber onequa ute irure dolor in reprehen derit in voluptate
-          </p>
-
-          <ul class="skills-list">
-
-            <li class="skills-item">
-              <div class="wrapper" style="width: 95%">
-                <h3 class=" skills-title">CSS</h3>
-
-                <data class="skills-data" value="95">95%</data>
-              </div>
-
-              <div class="skills-progress-box">
-                <div class="skills-progress" style="width: 95%"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="wrapper" style="width: 75%">
-                <h3 class="skills-title">React</h3>
-
-                <data class="skills-data" value="75">75%</data>
-              </div>
-
-              <div class="skills-progress-box">
-                <div class="skills-progress" style="width: 75%"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="wrapper" style="width: 90%">
-                <h3 class="skills-title">MongoDB</h3>
-
-                <data class="skills-data" value="90">90%</data>
-              </div>
-
-              <div class="skills-progress-box">
-                <div class="skills-progress" style="width: 90%"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="wrapper" style="width: 70%">
-                <h3 class="skills-title">Python</h3>
-
-                <data class="skills-data" value="70">70%</data>
-              </div>
-
-              <div class="skills-progress-box">
-                <div class="skills-progress" style="width: 70%"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="wrapper" style="width: 80%">
-                <h3 class="skills-title">PHP</h3>
-
-                <data class="skills-data" value="80">80%</data>
-              </div>
-
-              <div class="skills-progress-box">
-                <div class="skills-progress" style="width: 80%"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="wrapper" style="width: 75%">
-                <h3 class="skills-title">JavaScript</h3>
-
-                <data class="skills-data" value="75">75%</data>
-              </div>
-
-              <div class="skills-progress-box">
-                <div class="skills-progress" style="width: 75%"></div>
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-      </section> -->
-
-
-
-
-
-      <!-- 
+ <!-- 
         - #CONTACT
       -->
 
@@ -550,6 +448,105 @@ to meet your unique needs.
 
         </div>
       </section>
+
+
+
+      <!-- 
+        - #SKILLS
+      -->
+      <section class="pricing" id="pricing">
+          <h2 class="h2 section-title">Our cleaning Prices</h2>
+          <div class="project-heading"><p>ANY DEFINITION OR ANYTHING KAHIT ANO BAST NAG  EEXPLAIN DITO HAHA</p></div>
+          <div class="cards">
+                <div class="card" data-aos="fade-up">
+                    <div class="card__cover">
+                        <img src="assets/images/pricing-1.jpg" alt="Avatar">
+                    </div>
+                    <div class="card__content">
+                        <h4><b>General Cleaning</b></h4>
+                        <p>$6.99</p>
+                        <button class="cardBtn" type="button">Link here --></button>
+                    </div>
+                </div>
+                <div class="card" data-aos="fade-up">
+                    <div class="card__cover">
+                        <img src="assets/images/pricing-2.jpg" alt="Avatar">
+                    </div>
+                    <div class="card__content">
+                        <h4><b>Deep Cleaning</b></h4>
+                        <p>$5.99</p>
+                        <button class="cardBtn" type="button">Link here --></button>
+                    </div>
+                </div>
+                <div class="card" data-aos="fade-up">
+                    <div class="card__cover">
+                        <img src="assets/images/pricing-3.jpg" alt="Avatar">
+                    </div>
+                    <div class="card__content">
+                        <h4><b>Construction Cleaning</b></h4>
+                        <p>$6.99</p>
+                        <button class="cardBtn" type="button">Link here --></button>
+                    </div>
+                </div>
+                <div class="card" data-aos="fade-up">
+                    <div class="card__cover">
+                        <img src="assets/images/pricing-3.jpg" alt="Avatar">
+                    </div>
+                    <div class="card__content">
+                        <h4><b>ADD NALANG KAHIT ANO</b></h4>
+                        <p>$6.99</p>
+                        <button class="cardBtn" type="button">Link here --></button>
+                    </div>
+                </div>
+                <div class="card" data-aos="fade-up">
+                    <div class="card__cover">
+                        <img src="assets/images/pricing-3.jpg" alt="Avatar">
+                    </div>
+                    <div class="card__content">
+                        <h4><b>ADD NALANG KAHIT ANO</b></h4>
+                        <p>$6.99</p>
+                        <button class="cardBtn" type="button">Link here --></button>
+                    </div>
+                </div>
+                <div class="card" data-aos="fade-up">
+                    <div class="card__cover">
+                        <img src="assets/images/pricing-3.jpg" alt="Avatar">
+                    </div>
+                    <div class="card__content">
+                        <h4><b>ADD NALANG KAHIT ANO</b></h4>
+                        <p>$6.99</p>
+                        <button class="cardBtn" type="button">Link here --></button>
+                    </div>
+                </div>
+                <div class="card" data-aos="fade-up">
+                    <div class="card__cover">
+                        <img src="assets/images/pricing-3.jpg" alt="Avatar">
+                    </div>
+                    <div class="card__content">
+                        <h4><b>ADD NALANG KAHIT ANO</b></h4>
+                        <p>$6.99</p>
+                        <button class="cardBtn" type="button">Link here --></button>
+                    </div>
+                </div>
+                <div class="card" data-aos="fade-up">
+                    <div class="card__cover">
+                        <img src="assets/images/pricing-3.jpg" alt="Avatar">
+                    </div>
+                    <div class="card__content">
+                        <h4><b>ADD NALANG KAHIT ANO</b></h4>
+                        <p>$6.99</p>
+                        <button class="cardBtn" type="button">Link here --></button>
+                    </div>
+                </div>
+
+        </div>
+      </section>
+
+
+
+
+
+     
 
 
 
