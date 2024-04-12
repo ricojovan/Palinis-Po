@@ -2836,4 +2836,21 @@ table.dataTable thead td {
     color: #555;
 }
 
+
+
+input[type="tel"]::-webkit-outer-spin-button,
+input[type="tel"]::-webkit-inner-spin-button,
+input[type="tel"],
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]
+
+{
+    -webkit-appearance: none;
+    -moz-appearance: textfield; /* Firefox */
+    appearance: none;
+}
+
+
 /*-------------------- END Offset Sidebar ------------------- */

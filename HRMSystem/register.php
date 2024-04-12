@@ -50,7 +50,19 @@
                     <div class="col-sm-4">
                         <div class="card">
                             <div class="card-body">
-                                <!-- Display user details here -->
+                            <div class="media mb-5">
+                                        <img class="img-fluid mr-4" src="assets/images/media/media1.jpg" alt="image">
+                                            <div class="media-body">
+                                                <h4 class="mb-3">First Name, Last Name</h4>
+                                                <p>
+                                                Username: ######<br>
+                                                Position: Admin<br>
+                                                Cellphone Number: +639000000000<br>
+                                                Date Hire: MM/DD/YYYY<br>
+                                                Age: #
+                                                </p> 
+                                            </div>
+                                    </div>
                             </div>
                         </div>
                     </div>
@@ -61,7 +73,14 @@
                                     <h4 class="header-title">Register Account</h4>
                                     <!-- Registration form -->
                                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="needs-validation" novalidate="">
-                                        <div class="form-row">
+                                   
+                                    <div class="col-md-3 mb-3">
+                                                <label for="validationCustom04">Emp ID</label>
+                                                <input type="number" class="form-control" name="ID" id="validationCustom04" placeholder="000" required="" style="width: 55px" id="disabledTextInput">
+                                            </div>
+                                    
+                                    <div class="form-row">
+
                                             <div class="col-md-4 mb-3">
                                                 <label for="validationCustom01">First name</label>
                                                 <input type="text" class="form-control" name="first_name" id="validationCustom01" placeholder="First name" required="">
@@ -87,7 +106,7 @@
                                             </div>
                                             <div class="col-md-3 mb-3">
                                                 <label for="validationCustom04">Cellphone Number</label>
-                                                <input type="text" class="form-control" name="phone" id="validationCustom04" placeholder="+63**********" required="">
+                                                <input type="tel" class="form-control" name="phone" id="validationCustom04" placeholder="+63**********" required="">
                                             </div>
                                             <div class="col-md-3 mb-3">
                                                 <label for="date-input">Date Hire</label>
@@ -108,6 +127,19 @@
                                                 <input class="form-control" type="number" name="age" placeholder="##" id="example-number-input" required="">
                                             </div>
                                         </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6 mb-3">
+                                                <label class="col-form-label">Select Group</label>
+                                                <select class="form-control" name="position" style="height: 45px;">
+                                                    <option>Select</option>
+                                                    <option>Admin</option>
+                                                    <option>A</option>
+                                                    <option>B</option>
+                                                    <option>C</option>
+                                                    <option>D</option>
+                                                    <option>E</option>
+                                                </select>
+                                            </div>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Upload</span>
@@ -186,56 +218,5 @@
         <!-- main content area end -->
     <br><br>
     <?php include 'nav-and-footer/footer-area.php';?>  
-     
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            // Edit button click handler
-            $('.edit-btn').click(function(e) {
-                e.preventDefault();
-                var fullName = $(this).data('name');
-                var position = $(this).data('position');
-                var username = $(this).data('username');
-                var age = $(this).data('age');
-                var startDate = $(this).data('start-date');
-                var phone = $(this).data('phone');
-
-                // Populate form fields with data
-                $('#validationCustom01').val(fullName.split(' ')[0]);
-                $('#validationCustom02').val(fullName.split(' ')[1]);
-                $('#validationCustomUsername').val(username);
-                $('#validationCustom03').val(""); // Password field - you may need to handle this differently
-                $('#validationCustom04').val(phone);
-                $('#validationCustom05').val(startDate);
-                $('select[name="position"]').val(position);
-                $('input[name="age"]').val(age);
-            });
-
-            // Delete button click handler
-            $('.delete-btn').click(function(e) {
-                e.preventDefault();
-                var fullName = $(this).data('name');
-
-                // Send an AJAX request to delete the record
-                $.ajax({
-                    method: 'POST',
-                    url: 'delete_employee.php', // Create a new PHP file to handle deletion
-                    data: { fullName: fullName },
-                    success: function(response) {
-                        if (response === 'success') {
-                            alert('Employee record deleted successfully!');
-                            window.location.reload(); // Refresh the page
-                        } else {
-                            alert('Error deleting employee record.');
-                        }
-                    },
-                    error: function() {
-                        alert('Error deleting employee record.');
-                    }
-                });
-            });
-        });
-    </script>
-    
 </body>
 </html>

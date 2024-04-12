@@ -252,8 +252,59 @@
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
     <script>
-  $(document).ready( function () {
+
+</script>
+
+    <script>
+        $(document).ready(function() {
+            // Edit button click handler
+            $('.edit-btn').click(function(e) {
+                e.preventDefault();
+                var fullName = $(this).data('name');
+                var position = $(this).data('position');
+                var username = $(this).data('username');
+                var age = $(this).data('age');
+                var startDate = $(this).data('start-date');
+                var phone = $(this).data('phone');
+
+                // Populate form fields with data
+                $('#validationCustom01').val(fullName.split(' ')[0]);
+                $('#validationCustom02').val(fullName.split(' ')[1]);
+                $('#validationCustomUsername').val(username);
+                $('#validationCustom03').val(""); // Password field - you may need to handle this differently
+                $('#validationCustom04').val(phone);
+                $('#validationCustom05').val(startDate);
+                $('select[name="position"]').val(position);
+                $('input[name="age"]').val(age);
+            });
+
+            // Delete button click handler
+            $('.delete-btn').click(function(e) {
+                e.preventDefault();
+                var fullName = $(this).data('name');
+
+                // Send an AJAX request to delete the record
+                $.ajax({
+                    method: 'POST',
+                    url: 'delete_employee.php', // Create a new PHP file to handle deletion
+                    data: { fullName: fullName },
+                    success: function(response) {
+                        if (response === 'success') {
+                            alert('Employee record deleted successfully!');
+                            window.location.reload(); // Refresh the page
+                        } else {
+                            alert('Error deleting employee record.');
+                        }
+                    },
+                    error: function() {
+                        alert('Error deleting employee record.');
+                    }
+                });
+            });
+        });
+
+        $(document).ready( function () {
     $('#dataTable3').DataTable();
   });
-</script>
+    </script>
 </html>
