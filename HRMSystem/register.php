@@ -55,11 +55,13 @@
                                             <div class="media-body">
                                                 <h4 class="mb-3">First Name, Last Name</h4>
                                                 <p>
+                                                Emp ID: ##<br>
                                                 Username: ######<br>
                                                 Position: Admin<br>
                                                 Cellphone Number: +639000000000<br>
                                                 Date Hire: MM/DD/YYYY<br>
-                                                Age: #
+                                                Age: #<br>
+                                                Group: #
                                                 </p> 
                                             </div>
                                     </div>
