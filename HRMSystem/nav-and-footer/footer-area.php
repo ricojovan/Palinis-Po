@@ -334,6 +334,15 @@
         $(document).ready( function () {
     $('#dataTable3').DataTable();
   });
+
+
+  $(document).ready( function () {
+    $('#TimeIn').DataTable();
+  });
+
+  $(document).ready( function () {
+    $('#TimeOut').DataTable();
+  });
     </script>
     </body>
 </html>

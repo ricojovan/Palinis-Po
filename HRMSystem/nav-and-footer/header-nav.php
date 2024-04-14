@@ -278,7 +278,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="#"><i class='fa fa-th-list'></i> <span>Attendance List</span></a>
+                                        <a href="attendance.php"><i class='fa fa-th-list'></i> <span>Attendance List</span></a>
                                     </li>
                                     <li>
                                         <a href="register.php"><i class='fa fa-sign-in'></i><span>Register</span></a>
