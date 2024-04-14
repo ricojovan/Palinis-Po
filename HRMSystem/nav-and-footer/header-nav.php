@@ -54,8 +54,41 @@
 
     <!-- preloader area start -->
     <div id="preloader">
-        <div class="loader"></div>
+        <!-- <div class="loader"></div> -->
+
+        <div class="boxes">
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+        
+
+
+
+
+
+        </div>
     <!-- preloader area end -->
 
     <!-- main wrapper start -->
