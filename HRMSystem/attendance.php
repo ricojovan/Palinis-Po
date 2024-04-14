@@ -19,7 +19,7 @@
                     <div class="col-12 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">Progress Table</h4>
+                                <h4 class="header-title">Time In</h4>
                                 <div class="single-table">
                                     <div class="table-responsive">
                                         <table id="TimeIn" class="table table-hover progress-table text-center">
@@ -80,7 +80,7 @@
 <div class="col-12 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">Progress Table</h4>
+                                <h4 class="header-title">Time Out</h4>
                                 <div class="single-table">
                                     <div class="table-responsive">
                                         <table id="TimeOut" class="table table-hover progress-table text-center">
