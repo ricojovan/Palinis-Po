@@ -215,17 +215,26 @@
                                                 if ($result->num_rows > 0) {
                                                     while ($row = $result->fetch_assoc()) {
                                                         echo "<tr>";
-                                                        echo "<td>" . $row["emp_id"] . "</td>";
-                                                        echo "<td>" . $row["full_name"] . "</td>";
-                                                        echo "<td>" . $row["position"] . "</td>";
-                                                        echo "<td>" . $row["group"] . "</td>";
-                                                        echo "<td>" . $row["username"] . "</td>";
-                                                        echo "<td>" . $row["age"] . "</td>";
-                                                        echo "<td>" . $row["start_date"] . "</td>";
-                                                        echo "<td>" . $row["phone"] . "</td>";
+                                                        echo "<td>" . htmlspecialchars($row["emp_id"]) . "</td>";
+                                                        echo "<td>" . htmlspecialchars($row["full_name"]) . "</td>";
+                                                        echo "<td>" . htmlspecialchars($row["position"]) . "</td>";
+                                                        echo "<td>" . htmlspecialchars($row["group"]) . "</td>";
+                                                        echo "<td>" . htmlspecialchars($row["username"]) . "</td>";
+                                                        echo "<td>" . htmlspecialchars($row["age"]) . "</td>";
+                                                        echo "<td>" . htmlspecialchars($row["start_date"]) . "</td>";
+                                                        echo "<td>" . htmlspecialchars($row["phone"]) . "</td>";
                                                         echo "<td>
                                                                 <ul class='d-flex justify-content-center'>
-                                                                    <li class='mr-3'><a href='#' class='text-secon dary edit-'data-name='" . $row["full_name"] . "' data-position='" . $row["position"] . "' data-username='" . $row["username"] . "' data-age='" . $row["age"] . "' data-start-date='" . $row["start_date"] . "' data-phone='" . $row["phone"] . "'><i class='fa fa-edit'></i></a></li>
+                                                                
+                                                                <li class='mr-3'><a href='#' class='text-secondary edit-btn' 
+                                                                data-name='" . htmlspecialchars($row["full_name"]) . "' 
+                                                                data-position='" . htmlspecialchars($row["position"]) . "' 
+                                                                data-username='" . htmlspecialchars($row["username"]) . "' 
+                                                                data-age='" . htmlspecialchars($row["age"]) . "' 
+                                                                data-start-date='" . htmlspecialchars($row["start_date"]) . "' 
+                                                                data-phone='" . htmlspecialchars($row["phone"]) . "'>
+                                                                <i class='fa fa-edit'></i></a></li>
+
                                                                     <li><a href='#' class='text-danger delete-btn' data-name='" . $row["full_name"] . "'><i class='ti-trash'></i></a></li>
                                                                 </ul>
                                                             </td>";

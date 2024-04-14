@@ -263,23 +263,32 @@
             // Edit button click handler
             $('.edit-btn').click(function(e) {
                 e.preventDefault();
+
+                // Get data attributes from the edit button
+                var empId = $(this).closest('tr').find('td:eq(0)').text().trim();
                 var fullName = $(this).data('name');
                 var position = $(this).data('position');
+                var group = $(this).closest('tr').find('td:eq(3)').text().trim(); // Assuming Group is in the 4th column
                 var username = $(this).data('username');
                 var age = $(this).data('age');
                 var startDate = $(this).data('start-date');
                 var phone = $(this).data('phone');
 
-                // Populate form fields with data
+                // Populate form fields with fetched data
+                $('#validationCustom04').val(empId);
                 $('#validationCustom01').val(fullName.split(' ')[0]);
                 $('#validationCustom02').val(fullName.split(' ')[1]);
                 $('#validationCustomUsername').val(username);
-                $('#validationCustom03').val(""); // Password field - you may need to handle this differently
-                $('#validationCustom04').val(phone);
+                $('#example-number-input').val(age);
                 $('#validationCustom05').val(startDate);
-                $('select[name="position"]').val(position);
-                $('input[name="age"]').val(age);
-            });
+                $('#validationCustom03').val(""); // Reset password field
+                $('#validationCustom06').val(position);
+                $('#validationCustom07').val(group);
+                $('#validationCustom08').val(phone);
+                });
+
+                // Focus on the first name field after populating
+                $('#validationCustom01').focus();
 
             // Delete button click handler
             $('.delete-btn').click(function(e) {
