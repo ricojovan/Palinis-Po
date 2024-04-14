@@ -78,7 +78,7 @@
                                    
                                     <div class="col-md-3 mb-3">
                                                 <label for="validationCustom04">Emp ID</label>
-                                                <input type="number" class="form-control" name="ID" id="validationCustom04" placeholder="000" required="" style="width: 55px" id="disabledTextInput">
+                                                <input type="number" class="form-control" name="ID" id="validationCustom04" placeholder="0000" required="" style="width: 60px" id="disabledTextInput" disabled>
                                             </div>
                                     
                                     <div class="form-row">
@@ -119,7 +119,7 @@
                                             <div class="col-md-6 mb-3">
                                                 <label class="col-form-label">Position</label>
                                                 <select class="form-control" name="position" style="height: 45px;">
-                                                    <option>Select</option>
+                                                <option value="" disabled selected>Select</option>
                                                     <option>Employee</option>
                                                     <option>Admin</option>
                                                 </select>
@@ -133,8 +133,7 @@
                                             <div class="col-md-6 mb-3">
                                                 <label class="col-form-label">Select Group</label>
                                                 <select class="form-control" name="position" style="height: 45px;">
-                                                    <option>Select</option>
-                                                    <option>Admin</option>
+                                                <option value="" disabled selected>Select</option>
                                                     <option>A</option>
                                                     <option>B</option>
                                                     <option>C</option>
@@ -151,7 +150,28 @@
                                                 <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                             </div>
                                         </div>
-                                        <button class="btn btn-primary" type="submit">Submit form</button>
+                                        <button  class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Submit form</button>
+
+                                        <!-- Modal -->
+                                        
+                                <!-- <div class="modal fade" id="exampleModalCenter">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Message</h5>
+                                                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Please ensure that all input fields are filled before submitting.</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary" type="submit" >Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+
                                     </form>
                                     <!-- End of registration form -->
                                 </div>
@@ -175,6 +195,7 @@
                                     <table id="dataTable3" class="text-center">
                                         <thead class="text-capitalize">
                                             <tr>
+                                                <!-- <th>ID Emp</th> -->
                                                 <th>Name</th>
                                                 <th>Position</th>
                                                 <th>Username</th>
@@ -220,5 +241,7 @@
         <!-- main content area end -->
     <br><br>
     <?php include 'nav-and-footer/footer-area.php';?>  
+
+    
 </body>
 </html>
