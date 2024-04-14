@@ -267,25 +267,14 @@
                                     
                                     
                                     <li class="mega-menu">
-                                        <a href="#"><i class='fa fa-users'></i><span>Employee List</span></a>
+                                        <a href="employee_list.php"><i class='fa fa-users'></i><span>Employee List</span></a>
                                         <ul class="submenu">
-                                            <li><a href="#">Employee 1</a></li>
-                                            <li><a href="#">Employee 2</a></li>
-                                            <li><a href="#">Employee 3</a></li>
-                                            <li><a href="#">Employee 4</a></li>
-                                            <li><a href="#">Employee 5</a></li>
-                                            <li><a href="#">Employee 6</a></li>
-                                            <li><a href="#">Employee 7</a></li>
-                                            <li><a href="#">Employee 8</a></li>
-                                            <li><a href="#">Employee 9</a></li>
-                                            <li><a href="#">Employee 10</a></li>
-                                            <li><a href="#">Employee 11</a></li>
-                                            <li><a href="#">Employee 12</a></li>
-                                            <li><a href="#">Employee 13</a></li>
-                                            <li><a href="#">Employee 14</a></li>
-                                            <li><a href="#">Employee 15</a></li>
-                                            <li><a href="#">Employee 16</a></li>
-                                            <li><a href="#">Employee 17</a></li>
+                                            <li><a href="#">Group A</a></li>
+                                            <li><a href="#">Group B</a></li>
+                                            <li><a href="#">Group C</a></li>
+                                            <li><a href="#">Group D</a></li>
+                                            <li><a href="#">Group E</a></li>
+                                            <li><a href="employee_list.php">View All</a></li>
                                         </ul>
                                     </li>
                                     <li>

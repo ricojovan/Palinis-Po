@@ -23,7 +23,7 @@
     <!-- modernizr css -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-
+<body>
 
 
 <!-- footer area start-->
@@ -310,4 +310,5 @@
     $('#dataTable3').DataTable();
   });
     </script>
+    </body>
 </html>
