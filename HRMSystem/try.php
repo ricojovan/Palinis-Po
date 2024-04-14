@@ -35,7 +35,15 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-sm-6">
-                                        <div class="grid-col">.col-2</div>
+                                    <div class="card card-bordered">
+                                <img class="card-img-top img-fluid" src="assets/images/card/card-img1.jpg" alt="image">
+                                <div class="card-body">
+                                    <h5 class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dicta.</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia adipisci quidem, quam nam reiciendis facere blanditiis atque neque architecto omnis magni totam, voluptate maiores, iusto molestias incidunt unde nesciunt cum.
+                                    </p>
+                                    <a href="#" class="btn btn-primary">Go More....</a>
+                                </div>
+                            </div>
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-sm-6">
                                         <div class="grid-col">.col-2</div>
