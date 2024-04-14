@@ -260,35 +260,51 @@
 
     <script>
         $(document).ready(function() {
-            // Edit button click handler
-            $('.edit-btn').click(function(e) {
-                e.preventDefault();
+        // Edit button click handler
+        $('.edit-btn').click(function(e) {
+            e.preventDefault();
 
-                // Get data attributes from the edit button
-                var empId = $(this).closest('tr').find('td:eq(0)').text().trim();
-                var fullName = $(this).data('name');
-                var position = $(this).data('position');
-                var group = $(this).closest('tr').find('td:eq(3)').text().trim(); // Assuming Group is in the 4th column
-                var username = $(this).data('username');
-                var age = $(this).data('age');
-                var startDate = $(this).data('start-date');
-                var phone = $(this).data('phone');
+            // Get data attributes from the edit button
+            var empId = $(this).closest('tr').find('td:eq(0)').text().trim();
+            var fullName = $(this).data('name');
+            var position = $(this).data('position');
+            var group = $(this).closest('tr').find('td:eq(3)').text().trim(); // Assuming Group is in the 4th column
+            var username = $(this).data('username');
+            var age = $(this).data('age');
+            var startDate = $(this).data('start-date');
+            var phone = $(this).closest('tr').find('td:eq(7)').text().trim(); // Assuming Phone is in the 8th column
 
-                // Populate form fields with fetched data
-                $('#validationCustom04').val(empId);
-                $('#validationCustom01').val(fullName.split(' ')[0]);
-                $('#validationCustom02').val(fullName.split(' ')[1]);
-                $('#validationCustomUsername').val(username);
-                $('#example-number-input').val(age);
-                $('#validationCustom05').val(startDate);
-                $('#validationCustom03').val(""); // Reset password field
-                $('#validationCustom06').val(position);
-                $('#validationCustom07').val(group);
-                $('#validationCustom08').val(phone);
-                });
+            // Populate form fields with fetched data
+            $('#validationCustom04').val(empId);
+            $('#validationCustom01').val(fullName.split(' ')[0]);
+            $('#validationCustom02').val(fullName.split(' ')[1]);
+            $('#validationCustomUsername').val(username);
+            $('#example-number-input').val(age);
+            $('#validationCustom05').val(startDate);
+            $('#validationCustom03').val(""); // Reset password field
+            $('#validationCustom06').val(position);
+            $('#validationCustom07').val(group);
+            $('#validationCustom04').val(phone);
 
-                // Focus on the first name field after populating
-                $('#validationCustom01').focus();
+            // Focus on the first name field after populating
+            $('#validationCustom01').focus();
+
+            // Prepare the HTML content to display in the <div>
+            var divContent = '<h4 class="mb-3">' + fullName + '</h4>';
+            divContent += '<p>Emp ID: ' + empId + '<br>';
+            divContent += 'Username: ' + username + '<br>';
+            divContent += 'Position: ' + position + '<br>';
+            divContent += 'Cellphone Number: ' + phone + '<br>';
+            divContent += 'Date Hire: ' + startDate + '<br>';
+            divContent += 'Age: ' + age + '<br>';
+            divContent += 'Group: ' + group + '</p>';
+
+            // Update the content of the <div> with the prepared HTML
+            $('.media-body').html(divContent);
+
+            // Optionally, you can show/hide or animate the <div> to make it visible
+            $('.media-body').slideDown(); // Example: Use a slide-down animation to reveal the updated content
+        });
 
             // Delete button click handler
             $('.delete-btn').click(function(e) {

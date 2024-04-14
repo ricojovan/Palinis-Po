@@ -223,6 +223,7 @@
                                                         echo "<td>" . htmlspecialchars($row["age"]) . "</td>";
                                                         echo "<td>" . htmlspecialchars($row["start_date"]) . "</td>";
                                                         echo "<td>" . htmlspecialchars($row["phone"]) . "</td>";
+
                                                         echo "<td>
                                                                 <ul class='d-flex justify-content-center'>
                                                                 
