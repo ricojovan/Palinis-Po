@@ -2,42 +2,46 @@
 <html class="no-js" lang="en">
 
 
-<?php
-        include 'db_connection.php'; // Include database connection script
+            <?php
+            include 'db_connection.php'; // Include database connection script
 
-        // Check if form is submitted
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // Retrieve form data
-            $first_name = $_POST['first_name'];
-            $last_name = $_POST['last_name'];
-            $full_name = $first_name . ' ' . $last_name; // Combine first and last name
+            // Check if form is submitted
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                // Retrieve form data
+                $first_name = $_POST['first_name'];
+                $last_name = $_POST['last_name'];
+                $full_name = $first_name . ' ' . $last_name; // Combine first and last name
 
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $position = $_POST['position'];
-            $phone = $_POST['phone'];
-            $date_hire = $_POST['date_hire'];
-            $age = $_POST['age'];
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                $position = $_POST['position'];
+                $group = $_POST['group'];
+                $phone = $_POST['phone'];
+                $date_hire = $_POST['date_hire'];
+                $age = $_POST['age'];
 
-            // SQL query to insert data into employees table
-            $sql = "INSERT INTO employees (full_name, position, username, age, start_date, phone)
-                    VALUES ('$full_name', '$position', '$username', '$age', '$date_hire', '$phone')";
+                // Generate a 4-digit random number for emp_id
+                $emp_id = mt_rand(1000, 9999); // Generate a random number between 1000 and 9999
 
-            if ($conn->query($sql) === TRUE) {
-                echo '<script>alert("New record created successsfully!");</script>';
-                echo '<script>window.location.href = "register.php";</script>';
-                // Redirect to a success page or perform other actions
-                // Example: header("Location: success.php");
-            } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                // SQL query to insert data into employees table
+                $sql = "INSERT INTO employees (emp_id, full_name, position, `group`, username, age, start_date, phone)
+                        VALUES ('$emp_id', '$full_name', '$position', '$group', '$username', '$age', '$date_hire', '$phone')";
+
+                if ($conn->query($sql) === TRUE) {
+                    echo '<script>alert("New record created successfully!");</script>';
+                    echo '<script>window.location.href = "register.php";</script>';
+                    // Redirect to a success page or perform other actions
+                    // Example: header("Location: success.php");
+                } else {
+                    echo "Error: " . $sql . "<br>" . $conn->error;
+                }
             }
-        }
 
-        // Fetch data from employees table
-        $sql_fetch_employees = "SELECT full_name, position, username, age, start_date, phone FROM employees";
-        $result = $conn->query($sql_fetch_employees);
+            // Fetch data from employees table
+            $sql_fetch_employees = "SELECT emp_id, full_name, position, `group`, username, age, start_date, phone FROM employees";
+            $result = $conn->query($sql_fetch_employees);
+            ?>
 
-    ?>
 
 <body style="overflow-x: hidden;">
     <?php include 'nav-and-footer/header-nav.php';?>
@@ -74,11 +78,11 @@
                                 <div class="card-body">
                                     <h4 class="header-title">Register Account</h4>
                                     <!-- Registration form -->
-                                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="needs-validation" novalidate="">
-                                   
+                                    
+                                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="needs-validation" novalidate="" >
                                     <div class="col-md-3 mb-3">
                                                 <label for="validationCustom04">Emp ID</label>
-                                                <input type="number" class="form-control" name="ID" id="validationCustom04" placeholder="0000" required="" style="width: 60px" id="disabledTextInput" disabled>
+                                                <input type="number" class="form-control" name="emp_id" id="validationCustom04" placeholder="0000" required="" style="width: 60px" id="disabledTextInput" disabled>
                                             </div>
                                     
                                     <div class="form-row">
@@ -132,7 +136,7 @@
                                         <div class="form-row">
                                             <div class="col-md-6 mb-3">
                                                 <label class="col-form-label">Select Group</label>
-                                                <select class="form-control" name="position" style="height: 45px;">
+                                                <select class="form-control" name="group" style="height: 45px;">
                                                 <option value="" disabled selected>Select</option>
                                                     <option>A</option>
                                                     <option>B</option>
@@ -146,7 +150,7 @@
                                                 <span class="input-group-text">Upload</span>
                                             </div>
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="inputGroupFile01" required="">
+                                                <input type="file" class="custom-file-input" name="photo" id="inputGroupFile01" required="">
                                                 <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                             </div>
                                         </div>
@@ -195,9 +199,10 @@
                                     <table id="dataTable3" class="text-center">
                                         <thead class="text-capitalize">
                                             <tr>
-                                                <!-- <th>ID Emp</th> -->
+                                                <th>EMP ID</th>
                                                 <th>Name</th>
                                                 <th>Position</th>
+                                                <th>Group</th>
                                                 <th>Username</th>
                                                 <th>Age</th>
                                                 <th>Start Date</th>
@@ -210,15 +215,17 @@
                                                 if ($result->num_rows > 0) {
                                                     while ($row = $result->fetch_assoc()) {
                                                         echo "<tr>";
+                                                        echo "<td>" . $row["emp_id"] . "</td>";
                                                         echo "<td>" . $row["full_name"] . "</td>";
                                                         echo "<td>" . $row["position"] . "</td>";
+                                                        echo "<td>" . $row["group"] . "</td>";
                                                         echo "<td>" . $row["username"] . "</td>";
                                                         echo "<td>" . $row["age"] . "</td>";
                                                         echo "<td>" . $row["start_date"] . "</td>";
                                                         echo "<td>" . $row["phone"] . "</td>";
                                                         echo "<td>
                                                                 <ul class='d-flex justify-content-center'>
-                                                                    <li class='mr-3'><a href='#' class='text-secondary edit-btn' data-name='" . $row["full_name"] . "' data-position='" . $row["position"] . "' data-username='" . $row["username"] . "' data-age='" . $row["age"] . "' data-start-date='" . $row["start_date"] . "' data-phone='" . $row["phone"] . "'><i class='fa fa-edit'></i></a></li>
+                                                                    <li class='mr-3'><a href='#' class='text-secon dary edit-'data-name='" . $row["full_name"] . "' data-position='" . $row["position"] . "' data-username='" . $row["username"] . "' data-age='" . $row["age"] . "' data-start-date='" . $row["start_date"] . "' data-phone='" . $row["phone"] . "'><i class='fa fa-edit'></i></a></li>
                                                                     <li><a href='#' class='text-danger delete-btn' data-name='" . $row["full_name"] . "'><i class='ti-trash'></i></a></li>
                                                                 </ul>
                                                             </td>";
