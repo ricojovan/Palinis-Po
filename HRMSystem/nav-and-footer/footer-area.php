@@ -284,7 +284,7 @@
             $('#validationCustom03').val(""); // Reset password field
             $('#validationCustom06').val(position);
             $('#validationCustom07').val(group);
-            $('#validationCustom04').val(phone);
+            $('#validationCustom08').val(phone);
 
             // Focus on the first name field after populating
             $('#validationCustom01').focus();

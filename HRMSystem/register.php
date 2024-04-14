@@ -111,8 +111,8 @@
                                                 <input type="password" class="form-control" name="password" id="validationCustom03" placeholder="Password" required="">
                                             </div>
                                             <div class="col-md-3 mb-3">
-                                                <label for="validationCustom04">Cellphone Number</label>
-                                                <input type="tel" class="form-control" name="phone" id="validationCustom04" placeholder="+63**********" required="">
+                                                <label for="validationCustom08">Cellphone Number</label>
+                                                <input type="tel" class="form-control" name="phone" id="validationCustom08" placeholder="+63**********" required="">
                                             </div>
                                             <div class="col-md-3 mb-3">
                                                 <label for="date-input">Date Hire</label>
