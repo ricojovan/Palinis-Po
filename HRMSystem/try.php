@@ -1,606 +1,351 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<?php include 'nav-and-footer/header-nav.php';?>
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    </head>
+
+            <?php
+            include 'db_connection.php'; // Include database connection script
+
+            // Check if form is submitted
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                // Retrieve form data
+                $first_name = $_POST['first_name'];
+                $last_name = $_POST['last_name'];
+                $full_name = $first_name . ' ' . $last_name; // Combine first and last name
+
+                $username = $_POST['username'];
+                $e_password = $_POST['e_password'];
+                $position = $_POST['position'];
+                $group = $_POST['group'];
+                $phone = $_POST['phone'];
+                $date_hire = $_POST['date_hire'];
+                $age = $_POST['age'];
+
+                // Generate a 4-digit random number for emp_id
+                $emp_id = mt_rand(1000, 9999); // Generate a random number between 1000 and 9999
+
+                // SQL query to insert data into employees table
+                $sql = "INSERT INTO employees (emp_id, full_name, position, `group`, username, age, start_date, phone, e_password)
+                    VALUES ('$emp_id', '$full_name', '$position', '$group', '$username', '$age', '$date_hire', '$phone', '$e_password')";
 
 
+                if ($conn->query($sql) === TRUE) {
+                    echo '<script>alert("New record created successfully!");</script>';
+                    echo '<script>window.location.href = "register.php";</script>';
+                    // Redirect to a success page or perform other actions
+                    // Example: header("Location: success.php");
+                } else {
+                    echo "Error: " . $sql . "<br>" . $conn->error;
+                }
+            }
 
-<!-- Bootstrap Grid start -->
-<div class="col-12 mt-5">
+            // Fetch data from employees table
+            $sql_fetch_employees = "SELECT emp_id, full_name, position, `group`, username, age, start_date, phone FROM employees";
+            $result = $conn->query($sql_fetch_employees);
+            ?>
+<body style="overflow-x: hidden;">
+    <?php include 'nav-and-footer/header-nav.php';?>
+    <!-- No gutters start -->
+    <div class="col-12 mt-5">
+        <div class="card">
+            <div class="card-body">
+                <div class="header-title">User Account</div>
+                <div class="row no-gutters">
+                    <div class="col-sm-4">
                         <div class="card">
-                            <div class="card-body">
-                                <div class="header-title">Bootstrap Grid System</div>
-                                
-                                <!-- Start 2 column grid system -->
-                                <div class="row">
-                                    <div class="col-lg-2 col-md-4 col-sm-6">
-                                        <div class="grid-col">
+                            <div class="card-body" >
+                            <div
+  class="profile-card w-[300px] rounded-md shadow-xl overflow-hidden z-[100] relative cursor-pointer snap-start shrink-0 bg-white flex flex-col items-center justify-center gap-3 transition-all duration-300 group"
+>
+  <div
+    class="avatar w-full pt-5 flex items-center justify-center flex-col gap-1"
+  >
+    <div
+      class="img_container w-full flex items-center justify-center relative z-40 after:absolute after:h-[6px] after:w-full after:bg-[#58b0e0] after:top-4 after:group-hover:size-[1%] after:delay-300 after:group-hover:delay-0 after:group-hover:transition-all after:group-hover:duration-300 after:transition-all after:duration-300 before:absolute before:h-[6px] before:w-full before:bg-[#58b0e0] before:bottom-4 before:group-hover:size-[1%] before:delay-300 before:group-hover:delay-0 before:group-hover:transition-all before:group-hover:duration-300 before:transition-all before:duration-300"
+    >
+      <svg
+        class="size-36 z-40 border-4 border-white rounded-full group-hover:border-8 group-hover:transition-all group-hover:duration-300 transition-all duration-300"
+        id="avatar"
+        viewBox="0 0 61.8 61.8"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g data-name="Layer 2">
+          <g data-name="—ÎÓÈ 1">
+            <path
+              d="M31.129 8.432c21.281 0 12.987 35.266 0 35.266-12.266 0-21.281-35.266 0-35.266z"
+              fill-rule="evenodd"
+              fill="#ffe8be"
+            ></path>
+            <circle fill="#58b0e0" r="30.9" cy="30.9" cx="30.9"></circle>
+            <path
+              d="M45.487 19.987l-29.173.175s1.048 16.148-2.619 21.21h35.701c-.92-1.35-3.353-1.785-3.909-21.385z"
+              fill-rule="evenodd"
+              fill="#60350a"
+            ></path>
+            <path
+              d="M18.135 45.599l7.206-3.187 11.55-.3 7.42 3.897-5.357 11.215-7.613 4.088-7.875-4.35-5.331-11.363z"
+              fill-rule="evenodd"
+              fill="#d5e1ed"
+            ></path>
+            <path
+              d="M24.744 38.68l12.931.084v8.949l-12.931-.085V38.68z"
+              fill-rule="evenodd"
+              fill="#f9dca4"
+            ></path>
+            <path
+              opacity=".11"
+              d="M37.677 38.778v3.58a9.168 9.168 0 0 1-.04 1.226 6.898 6.898 0 0 1-.313 1.327c-4.37 4.165-11.379.78-12.49-6.333z"
+              fill-rule="evenodd"
+            ></path>
+            <path
+              d="M52.797 52.701a30.896 30.896 0 0 1-44.08-.293l1.221-3.098 9.103-4.122c3.262 5.98 6.81 11.524 12.317 15.455A45.397 45.397 0 0 0 43.2 45.483l8.144 3.853z"
+              fill-rule="evenodd"
+              fill="#434955"
+            ></path>
+            <path
+              d="M19.11 24.183c-2.958 1.29-.442 7.41 1.42 7.383a30.842 30.842 0 01-1.42-7.383zM43.507 24.182c2.96 1.292.443 7.411-1.419 7.384a30.832 30.832 0 001.419-7.384z"
+              fill-rule="evenodd"
+              fill="#f9dca4"
+            ></path>
+            <path
+              d="M31.114 8.666c8.722 0 12.377 6.2 12.601 13.367.307 9.81-5.675 21.43-12.6 21.43-6.56 0-12.706-12.018-12.333-21.928.26-6.953 3.814-12.869 12.332-12.869z"
+              fill-rule="evenodd"
+              fill="#ffe8be"
+            ></path>
+            <path
+              d="M33.399 24.983a7.536 7.536 0 0 1 5.223-.993h.005c5.154.63 5.234 2.232 4.733 2.601a2.885 2.885 0 0 0-.785 1.022 6.566 6.566 0 0 1-1.052 2.922 5.175 5.175 0 0 1-3.464 2.312c-.168.027-.34.048-.516.058a4.345 4.345 0 0 1-3.65-1.554 8.33 8.33 0 0 1-1.478-2.53v.003s-.797-1.636-2.072-.114a8.446 8.446 0 0 1-1.52 2.64 4.347 4.347 0 0 1-3.651 1.555 5.242 5.242 0 0 1-.516-.058 5.176 5.176 0 0 1-3.464-2.312 6.568 6.568 0 0 1-1.052-2.921 2.75 2.75 0 0 0-.77-1.023c-.5-.37-.425-1.973 4.729-2.603h.002a7.545 7.545 0 0 1 5.24 1.01l-.001-.001.003.002.215.131a3.93 3.93 0 0 0 3.842-.148l-.001.001zm-4.672.638a6.638 6.638 0 0 0-6.157-.253c-1.511.686-1.972 1.17-1.386 3.163a5.617 5.617 0 0 0 .712 1.532 4.204 4.204 0 0 0 3.326 1.995 3.536 3.536 0 0 0 2.966-1.272 7.597 7.597 0 0 0 1.36-2.37c.679-1.78.862-1.863-.82-2.795zm10.947-.45a6.727 6.727 0 0 0-5.886.565c-1.538.911-1.258 1.063-.578 2.79a7.476 7.476 0 0 0 1.316 2.26 3.536 3.536 0 0 0 2.967 1.272 4.228 4.228 0 0 0 .43-.048 4.34 4.34 0 0 0 2.896-1.947 5.593 5.593 0 0 0 .684-1.44c.702-2.25.076-2.751-1.828-3.451z"
+              fill-rule="evenodd"
+              fill="#464449"
+            ></path>
+            <path
+              d="M17.89 25.608c0-.638.984-.886 1.598 2.943a22.164 22.164 0 0 0 .956-4.813c1.162.225 2.278 2.848 1.927 5.148 3.166-.777 11.303-5.687 13.949-12.324 6.772 3.901 6.735 12.094 6.735 12.094s.358-1.9.558-3.516c.066-.538.293-.733.798-.213C48.073 17.343 42.3 5.75 31.297 5.57c-15.108-.246-17.03 16.114-13.406 20.039z"
+              fill-rule="evenodd"
+              fill="#8a5c42"
+            ></path>
+            <path
+              d="M24.765 42.431a14.125 14.125 0 0 0 6.463 5.236l-4.208 6.144-5.917-9.78z"
+              fill-rule="evenodd"
+              fill="#fff"
+            ></path>
+            <path
+              d="M37.682 42.431a14.126 14.126 0 0 1-6.463 5.236l4.209 6.144 5.953-9.668z"
+              fill-rule="evenodd"
+              fill="#fff"
+            ></path>
+            <circle fill="#434955" r=".839" cy="52.562" cx="31.223"></circle>
+            <circle fill="#434955" r=".839" cy="56.291" cx="31.223"></circle>
+            <path
+              d="M41.997 24.737c1.784.712 1.719 1.581 1.367 1.841a2.886 2.886 0 0 0-.785 1.022 6.618 6.618 0 0 1-.582 2.086v-4.949zm-21.469 4.479a6.619 6.619 0 0 1-.384-1.615 2.748 2.748 0 0 0-.77-1.023c-.337-.249-.413-1.06 1.154-1.754z"
+              fill-rule="evenodd"
+              fill="#464449"
+            ></path>
+          </g>
+        </g>
+      </svg>
+      <div
+        class="absolute bg-[#58b0e0] z-10 size-[60%] w-full group-hover:size-[1%] group-hover:transition-all group-hover:duration-300 transition-all duration-300 delay-700 group-hover:delay-0"
+      ></div>
+    </div>
+  </div>
+  <div class="headings *:text-center *:leading-4">
+    <p class="text-xl font-serif font-semibold text-[#434955]">ANNA WILSON</p>
+    <p class="text-sm font-semibold text-[#434955]">DEVELOPER</p>
+  </div>
+  <div class="w-full items-center justify-center flex">
+    <ul
+      class="flex flex-col items-start gap-2 has-[:last]:border-b-0 *:inline-flex *:gap-2 *:items-center *:justify-center *:border-b-[1.5px] *:border-b-stone-700 *:border-dotted *:text-xs *:font-semibold *:text-[#434955] pb-3"
+    >
+      <li>
+        <svg
+          id="phone"
+          viewBox="0 0 24 24"
+          class="fill-stone-700 group-hover:fill-[#58b0e0]"
+          height="15"
+          width="15"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0 0h24v24H0V0z" fill="none"></path>
+          <path
+            d="M19.23 15.26l-2.54-.29c-.61-.07-1.21.14-1.64.57l-1.84 1.84c-2.83-1.44-5.15-3.75-6.59-6.59l1.85-1.85c.43-.43.64-1.03.57-1.64l-.29-2.52c-.12-1.01-.97-1.77-1.99-1.77H5.03c-1.13 0-2.07.94-2 2.07.53 8.54 7.36 15.36 15.89 15.89 1.13.07 2.07-.87 2.07-2v-1.73c.01-1.01-.75-1.86-1.76-1.98z"
+          ></path>
+        </svg>
+        <p>+123-458-784</p>
+      </li>
+      <li>
+        <svg
+          class="fill-stone-700 group-hover:fill-[#58b0e0]"
+          height="15"
+          width="15"
+          id="mail"
+          viewBox="0 0 32 32"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16,14.81,28.78,6.6A3,3,0,0,0,27,6H5a3,3,0,0,0-1.78.6Z"
+            fill="#231f20"
+          ></path>
+          <path
+            d="M16.54,16.84h0l-.17.08-.08,0A1,1,0,0,1,16,17h0a1,1,0,0,1-.25,0l-.08,0-.17-.08h0L2.1,8.26A3,3,0,0,0,2,9V23a3,3,0,0,0,3,3H27a3,3,0,0,0,3-3V9a3,3,0,0,0-.1-.74Z"
+            fill="#231f20"
+          ></path>
+        </svg>
+        <p>smkys@gmail.com</p>
+      </li>
+      <li>
+        <svg
+          class="fill-stone-700 group-hover:fill-[#58b0e0]"
+          height="15"
+          width="15"
+          id="globe"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g data-name="Layer 2">
+            <path
+              data-name="globe"
+              d="M22 12A10 10 0 0 0 12 2a10 10 0 0 0 0 20 10 10 0 0 0 10-10zm-2.07-1H17a12.91 12.91 0 0 0-2.33-6.54A8 8 0 0 1 19.93 11zM9.08 13H15a11.44 11.44 0 0 1-3 6.61A11 11 0 0 1 9.08 13zm0-2A11.4 11.4 0 0 1 12 4.4a11.19 11.19 0 0 1 3 6.6zm.36-6.57A13.18 13.18 0 0 0 7.07 11h-3a8 8 0 0 1 5.37-6.57zM4.07 13h3a12.86 12.86 0 0 0 2.35 6.56A8 8 0 0 1 4.07 13zm10.55 6.55A13.14 13.14 0 0 0 17 13h2.95a8 8 0 0 1-5.33 6.55z"
+            ></path>
+          </g>
+        </svg>
+        <p>smkydevelopr.com</p>
+      </li>
+      <li>
+        <svg
+          id="map"
+          viewBox="0 0 16 16"
+          class="fill-stone-700 group-hover:fill-[#58b0e0]"
+          height="15"
+          width="15"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 0C5.2 0 3 2.2 3 5s4 11 5 11 5-8.2 5-11-2.2-5-5-5zm0 8C6.3 8 5 6.7 5 5s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"
+            fill="#444"
+          ></path>
+        </svg>
+        <p>456 Anytown, Near Anywhere, ST 47523</p>
+      </li>
+    </ul>
+  </div>
+  <hr
+    class="w-full group-hover:h-5 h-3 bg-[#58b0e0] group-hover:transition-all group-hover:duration-300 transition-all duration-300"
+  />
+</div>
 
-                                        <div class="card card-bordered">
-                                <img class="card-img-top img-fluid" src="assets/images/card/card-img1.jpg" alt="image">
-                                <div class="card-body">
-                                    <h5 class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dicta.</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia adipisci quidem, quam nam reiciendis facere blanditiis atque neque architecto omnis magni totam, voluptate maiores, iusto molestias incidunt unde nesciunt cum.
-                                    </p>
-                                    <a href="#" class="btn btn-primary">Go More....</a>
-                                </div>
-                            </div>
-
-
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2 col-md-4 col-sm-6">
-                                    <div class="card card-bordered">
-                                <img class="card-img-top img-fluid" src="assets/images/card/card-img1.jpg" alt="image">
-                                <div class="card-body">
-                                    <h5 class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dicta.</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia adipisci quidem, quam nam reiciendis facere blanditiis atque neque architecto omnis magni totam, voluptate maiores, iusto molestias incidunt unde nesciunt cum.
-                                    </p>
-                                    <a href="#" class="btn btn-primary">Go More....</a>
-                                </div>
-                            </div>
-                                    </div>
-                                    <div class="col-lg-2 col-md-4 col-sm-6">
-                                        <div class="grid-col">.col-2</div>
-                                    </div>
-                                    <div class="col-lg-2 col-md-4 col-sm-6">
-                                        <div class="grid-col">.col-2</div>
-                                    </div>
-                                    <div class="col-lg-2 col-md-4 col-sm-6">
-                                        <div class="grid-col">.col-2</div>
-                                    </div>
-                                    <div class="col-lg-2 col-md-4 col-sm-6">
-                                        <div class="grid-col">.col-2</div>
-                                    </div>
-                                </div>
-                                
                             </div>
                         </div>
                     </div>
-                    <!-- Bootstrap Grid end -->
+                    <div class="col-sm-8">
+                        <div class="col-12">
+                            <div class="card mt-5">
+                                <div class="card-body">
+                                    <h4 class="header-title">Register Account</h4>
+                                    <!-- Registration form -->
+                                    
+                                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="needs-validation" novalidate="" >
+                                    <div class="col-md-3 mb-3">
+                                                <label for="validationCustom04">Emp ID</label>
+                                                <input type="number" class="form-control" name="emp_id" id="validationCustom04" placeholder="0000" required="" style="width: 60px" id="disabledTextInput" disabled>
+                                            </div>
+                                    
+                                    <div class="form-row">
 
+                                            <div class="col-md-4 mb-3">
+                                                <label for="validationCustom01">First name</label>
+                                                <input type="text" class="form-control" name="first_name" id="validationCustom01" placeholder="First name" required="">
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label for="validationCustom02">Last name</label>
+                                                <input type="text" class="form-control" name="last_name" id="validationCustom02" placeholder="Last name" required="">
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label for="validationCustomUsername">Username</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                                    </div>
+                                                    <input type="text" class="form-control" name="username" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="validationCustom03">Password</label>
+                                                <input type="password" class="form-control" name="e_password" id="validationCustom03" placeholder="Password" required="">
+                                            </div>
+                                            <div class="col-md-3 mb-3">
+                                                <label for="validationCustom08">Cellphone Number</label>
+                                                <input type="tel" class="form-control" name="phone" id="validationCustom08" placeholder="+63**********" required="">
+                                            </div>
+                                            <div class="col-md-3 mb-3">
+                                                <label for="date-input">Date Hire</label>
+                                                <input class="form-control" type="date" name="date_hire" id="validationCustom05" placeholder="2024-04-09" required="">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6 mb-3">
+                                                <label class="col-form-label">Position</label>
+                                                <select class="form-control" name="position" style="height: 45px;">
+                                                <option value="" disabled selected>Select</option>
+                                                    <option>Employee</option>
+                                                    <option>Admin</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3 mb-3">
+                                                <label for="example-number-input" class="col-form-label">Age</label>
+                                                <input class="form-control" type="number" name="age" placeholder="##" id="example-number-input" required="">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6 mb-3">
+                                                <label class="col-form-label">Select Group</label>
+                                                <select class="form-control" name="group" style="height: 45px;">
+                                                <option value="" disabled selected>Select</option>
+                                                    <option>A</option>
+                                                    <option>B</option>
+                                                    <option>C</option>
+                                                    <option>D</option>
+                                                    <option>E</option>
+                                                    <option>F</option>
+                                                    <option>G</option>
+                                                    <option>H</option>
+                                                </select>
+                                            </div>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Upload</span>
+                                            </div>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" name="photo" id="inputGroupFile01" required="">
+                                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                            </div>
+                                        </div>
+                                        <button  class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Submit form</button>
 
-<!-- left align tab start -->
-<div class="col-lg-6 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-md-flex">
-                                    <div class="nav flex-column nav-pills mr-4 mb-3 mb-sm-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-group-A" role="tab" aria-controls="v-pills-group-A" aria-selected="true">Group A</a>
-                                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-group-B" role="tab" aria-controls="v-pills-group-B" aria-selected="false">Group B</a>
-                                        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-group-C" role="tab" aria-controls="v-pills-group-C" aria-selected="false">Group C</a>
-                                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-group-D" role="tab" aria-controls="v-pills-group-D" aria-selected="false">Group D</a>
-                                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-group-E" role="tab" aria-controls="v-pills-group-E" aria-selected="false">Group E</a>
-                                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-group-F" role="tab" aria-controls="v-pills-group-F" aria-selected="false">Group F</a>
-                                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-group-G" role="tab" aria-controls="v-pills-group-G" aria-selected="false">Group G</a>
-                                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-group-H" role="tab" aria-controls="v-pills-group-H" aria-selected="false">Group H</a>
+                                        <!-- Modal -->
+                                        
+                                <!-- <div class="modal fade" id="exampleModalCenter">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Message</h5>
+                                                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Please ensure that all input fields are filled before submitting.</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary" type="submit" >Submit</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                <div class="tab-content" id="v-pills-tabContent">
-                                <div class="tab-pane fade show active" id="v-pills-group-A" role="tabpanel" aria-labelledby="v-pills-group-A-tab">
-                                <h4 class="header-title">Group A</h4>
-                                <div class="single-table">
-                                    <div class="table-responsive" style="table-layout: auto;">
-                                        <table id="group-a" class="table table-hover progress-table text-center">
-                                            <thead class="text-uppercase">
-                                                <tr>
-                                                    <th scope="col">ID</th>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">Time In</th>
-                                                    <th scope="col">Date</th>
-                                                    <th scope="col">Action</th>
-                                                    
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>10:00AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Mark</td>
-                                                    <td>9:00AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Mark</td>
-                                                    <td>10:21AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>Mark</td>
-                                                    <td>10:52AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                    
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                                <div class="tab-pane fade" id="v-pills-group-B" role="tabpanel" aria-labelledby="v-pills-group-B-tab">
-                                <h4 class="header-title">Group B</h4>
-                                <div class="single-table">
-                                    <div class="table-responsive">
-                                        <table id="group-b" class="table table-hover progress-table text-center">
-                                            <thead class="text-uppercase">
-                                                <tr>
-                                                    <th scope="col">ID</th>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">Time In</th>
-                                                    <th scope="col">Date</th>
-                                                    <th scope="col">Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>10:00AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Mark</td>
-                                                    <td>9:00AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Mark</td>
-                                                    <td>10:21AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>Mark</td>
-                                                    <td>10:52AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                                <div class="tab-pane fade" id="v-pills-group-C" role="tabpanel" aria-labelledby="v-pills-group-C-tab"> 
-                                <h4 class="header-title">Group C</h4>
-                                <div class="single-table">
-                                    <div class="table-responsive">
-                                        <table id="group-c" class="table table-hover progress-table text-center">
-                                            <thead class="text-uppercase">
-                                                <tr>
-                                                    <th scope="col">ID</th>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">Time In</th>
-                                                    <th scope="col">Date</th>
-                                                    <th scope="col">Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>10:00AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Mark</td>
-                                                    <td>9:00AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Mark</td>
-                                                    <td>10:21AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>Mark</td>
-                                                    <td>10:52AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-group-D" role="tabpanel" aria-labelledby="v-pills-group-D-tab">       
-                                <h4 class="header-title">Group D</h4>
-                                <div class="single-table">
-                                    <div class="table-responsive">
-                                        <table id="group-d" class="table table-hover progress-table text-center">
-                                            <thead class="text-uppercase">
-                                                <tr>
-                                                    <th scope="col">ID</th>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">Time In</th>
-                                                    <th scope="col">Date</th>
-                                                    <th scope="col">Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>10:00AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Mark</td>
-                                                    <td>9:00AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Mark</td>
-                                                    <td>10:21AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>Mark</td>
-                                                    <td>10:52AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-group-E" role="tabpanel" aria-labelledby="v-pills-group-E-tab">
-                                <h4 class="header-title">Group E</h4>
-                                <div class="single-table">
-                                    <div class="table-responsive">
-                                        <table id="group-e" class="table table-hover progress-table text-center">
-                                            <thead class="text-uppercase">
-                                                <tr>
-                                                    <th scope="col">ID</th>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">Time In</th>
-                                                    <th scope="col">Date</th>
-                                                    <th scope="col">Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>10:00AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Mark</td>
-                                                    <td>9:00AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Mark</td>
-                                                    <td>10:21AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>Mark</td>
-                                                    <td>10:52AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-group-F" role="tabpanel" aria-labelledby="v-pills-group-F-tab">
-                                <h4 class="header-title">Group F</h4>
-                                <div class="single-table">
-                                    <div class="table-responsive">
-                                        <table id="group-f" class="table table-hover progress-table text-center">
-                                            <thead class="text-uppercase">
-                                                <tr>
-                                                    <th scope="col">ID</th>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">Time In</th>
-                                                    <th scope="col">Date</th>
-                                                    <th scope="col">Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>10:00AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Mark</td>
-                                                    <td>9:00AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Mark</td>
-                                                    <td>10:21AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>Mark</td>
-                                                    <td>10:52AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-group-G" role="tabpanel" aria-labelledby="v-pills-group-G-tab">
-                                <h4 class="header-title">Group G</h4>
-                                <div class="single-table">
-                                    <div class="table-responsive">
-                                        <table id="group-g" class="table table-hover progress-table text-center">
-                                            <thead class="text-uppercase">
-                                                <tr>
-                                                    <th scope="col">ID</th>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">Time In</th>
-                                                    <th scope="col">Date</th>
-                                                    <th scope="col">Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>10:00AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Mark</td>
-                                                    <td>9:00AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Mark</td>
-                                                    <td>10:21AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>Mark</td>
-                                                    <td>10:52AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-group-H" role="tabpanel" aria-labelledby="v-pills-group-H-tab">
-                                <h4 class="header-title">Group H</h4>
-                                <div class="single-table">
-                                    <div class="table-responsive">
-                                        <table id="group-h" class="table table-hover progress-table text-center">
-                                            <thead class="text-uppercase">
-                                                <tr>
-                                                    <th scope="col">ID</th>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">Time In</th>
-                                                    <th scope="col">Date</th>
-                                                    <th scope="col">Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>10:00AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Mark</td>
-                                                    <td>9:00AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Mark</td>
-                                                    <td>10:21AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>Mark</td>
-                                                    <td>10:52AM</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                </div> -->
+
+                                    </form>
+                                    <!-- End of registration form -->
                                 </div>
                             </div>
                         </div>
@@ -608,9 +353,80 @@
                 </div>
             </div>
         </div>
+    </div>
+ <!-- Bootstrap Grid start -->
+    <!-- Start 12 column grid system -->
+        <div class="row">
+            <div class="col-12">
+            <!-- Dark table start -->
+                    <div class="col-12 mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title">Data Table Dark</h4>
+                                <div class="data-tables datatable-dark">
+                                    <table id="dataTable3" class="text-center">
+                                        <thead class="text-capitalize">
+                                            <tr>
+                                                <th>EMP ID</th>
+                                                <th>Name</th>
+                                                <th>Position</th>
+                                                <th>Group</th>
+                                                <th>Username</th>
+                                                <th>Age</th>
+                                                <th>Start Date</th>
+                                                <th>Phone</th>
+                                                <th scope="col">action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                                if ($result->num_rows > 0) {
+                                                    while ($row = $result->fetch_assoc()) {
+                                                        echo "<tr>";
+                                                        echo "<td>" . htmlspecialchars($row["emp_id"]) . "</td>";
+                                                        echo "<td>" . htmlspecialchars($row["full_name"]) . "</td>";
+                                                        echo "<td>" . htmlspecialchars($row["position"]) . "</td>";
+                                                        echo "<td>" . htmlspecialchars($row["group"]) . "</td>";
+                                                        echo "<td>" . htmlspecialchars($row["username"]) . "</td>";
+                                                        echo "<td>" . htmlspecialchars($row["age"]) . "</td>";
+                                                        echo "<td>" . htmlspecialchars($row["start_date"]) . "</td>";
+                                                        echo "<td>" . htmlspecialchars($row["phone"]) . "</td>";
 
+                                                        echo "<td>
+                                                                <ul class='d-flex justify-content-center'>
+                                                                
+                                                                <li class='mr-3'><a href='#' class='text-secondary edit-btn' 
+                                                                data-name='" . htmlspecialchars($row["full_name"]) . "' 
+                                                                data-position='" . htmlspecialchars($row["position"]) . "' 
+                                                                data-username='" . htmlspecialchars($row["username"]) . "' 
+                                                                data-age='" . htmlspecialchars($row["age"]) . "' 
+                                                                data-start-date='" . htmlspecialchars($row["start_date"]) . "' 
+                                                                data-phone='" . htmlspecialchars($row["phone"]) . "'>
+                                                                <i class='fa fa-edit'></i></a></li>
 
+                                                                    <li><a href='#' class='text-danger delete-btn' data-name='" . $row["full_name"] . "'><i class='ti-trash'></i></a></li>
+                                                                </ul>
+                                                            </td>";
+                                                        echo "</tr>";
+                                                    }
+                                                } else {
+                                                    echo "<tr><td colspan='7'>No employees found</td></tr>";
+                                                }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Dark table end -->
+                </div>
+            </div>      
+        <!-- Bootstrap Grid end -->
+        <!-- main content area end -->
+    <br><br>
+    <?php include 'nav-and-footer/footer-area.php';?>  
 
-<?php include 'nav-and-footer/footer-area.php';?>  
+    
 </body>
 </html>
