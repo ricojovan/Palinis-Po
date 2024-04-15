@@ -13,19 +13,21 @@
                 $full_name = $first_name . ' ' . $last_name; // Combine first and last name
 
                 $username = $_POST['username'];
-                $password = $_POST['password'];
+                $e_password = $_POST['e_password'];
                 $position = $_POST['position'];
                 $group = $_POST['group'];
                 $phone = $_POST['phone'];
                 $date_hire = $_POST['date_hire'];
                 $age = $_POST['age'];
+                
 
                 // Generate a 4-digit random number for emp_id
                 $emp_id = mt_rand(1000, 9999); // Generate a random number between 1000 and 9999
 
                 // SQL query to insert data into employees table
-                $sql = "INSERT INTO employees (emp_id, full_name, position, `group`, username, age, start_date, phone)
-                        VALUES ('$emp_id', '$full_name', '$position', '$group', '$username', '$age', '$date_hire', '$phone')";
+                $sql = "INSERT INTO employees (emp_id, full_name, position, `group`, username, age, start_date, phone, e_password)
+                    VALUES ('$emp_id', '$full_name', '$position', '$group', '$username', '$age', '$date_hire', '$phone', '$e_password')";
+
 
                 if ($conn->query($sql) === TRUE) {
                     echo '<script>alert("New record created successfully!");</script>';
@@ -108,7 +110,7 @@
                                         <div class="form-row">
                                             <div class="col-md-6 mb-3">
                                                 <label for="validationCustom03">Password</label>
-                                                <input type="password" class="form-control" name="password" id="validationCustom03" placeholder="Password" required="">
+                                                <input type="password" class="form-control" name="e_password" id="validationCustom03" placeholder="Password" required="">
                                             </div>
                                             <div class="col-md-3 mb-3">
                                                 <label for="validationCustom08">Cellphone Number</label>
