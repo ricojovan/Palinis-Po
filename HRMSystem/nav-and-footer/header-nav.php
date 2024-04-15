@@ -83,12 +83,6 @@
         <div></div>
     </div>
 </div>
-        
-
-
-
-
-
         </div>
     <!-- preloader area end -->
 

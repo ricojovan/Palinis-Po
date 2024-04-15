@@ -46,6 +46,7 @@
                                                     <th scope="col">Contact</th>
                                                     <th scope="col">Date</th>
                                                     <th scope="col">Status</th>
+                                                    <th scope="col">Action</th>
                                                     
                                                 </tr>
                                             </thead>
@@ -58,6 +59,12 @@
                                                     <td>
                                                         Available
                                                     </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
+                                                    </td>
                                                 <tr>
                                                     <th scope="row">2</th>
                                                     <td>Mark</td>
@@ -65,6 +72,12 @@
                                                     <td>09 / 07 / 2018</td>
                                                     <td>
                                                         Available
+                                                    </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -75,6 +88,12 @@
                                                     <td>
                                                         Available
                                                     </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
+                                                    </td>
                                                 <tr>
                                                     <th scope="row">4</th>
                                                     <td>Mark</td>
@@ -82,6 +101,12 @@
                                                     <td>09 / 07 / 2018</td>
                                                     <td>
                                                         Available
+                                                    </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
                                                     </td>
                                                     
                                             </tbody>
@@ -100,7 +125,7 @@
                                                     <th scope="col">Contact</th>
                                                     <th scope="col">Date</th>
                                                     <th scope="col">Status</th>
-                                                    
+                                                    <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -112,6 +137,12 @@
                                                     <td>
                                                         Available
                                                     </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
+                                                    </td>
                                                 <tr>
                                                     <th scope="row">2</th>
                                                     <td>Mark</td>
@@ -119,6 +150,12 @@
                                                     <td>09 / 07 / 2018</td>
                                                     <td>
                                                         Unavailable
+                                                    </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -129,6 +166,12 @@
                                                     <td>
                                                         Available
                                                     </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
+                                                    </td>
                                                 <tr>
                                                     <th scope="row">4</th>
                                                     <td>Mark</td>
@@ -136,6 +179,12 @@
                                                     <td>09 / 07 / 2018</td>
                                                     <td>
                                                         Available
+                                                    </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
                                                     </td>
                                                     
                                             </tbody>
@@ -154,7 +203,7 @@
                                                     <th scope="col">Contact</th>
                                                     <th scope="col">Date</th>
                                                     <th scope="col">Status</th>
-                                                    
+                                                    <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -166,6 +215,12 @@
                                                     <td>
                                                         Available
                                                     </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
+                                                    </td>
                                                 <tr>
                                                     <th scope="row">2</th>
                                                     <td>Mark</td>
@@ -173,6 +228,12 @@
                                                     <td>09 / 07 / 2018</td>
                                                     <td>
                                                         Available
+                                                    </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -183,6 +244,12 @@
                                                     <td>
                                                         Available
                                                     </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
+                                                    </td>
                                                 <tr>
                                                     <th scope="row">4</th>
                                                     <td>Mark</td>
@@ -190,6 +257,12 @@
                                                     <td>09 / 07 / 2018</td>
                                                     <td>
                                                         Available
+                                                    </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
                                                     </td>
                                                     
                                             </tbody>
@@ -208,7 +281,7 @@
                                                     <th scope="col">Contact</th>
                                                     <th scope="col">Date</th>
                                                     <th scope="col">Status</th>
-                                                    
+                                                    <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -220,6 +293,12 @@
                                                     <td>
                                                         Available
                                                     </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
+                                                    </td>
                                                 <tr>
                                                     <th scope="row">2</th>
                                                     <td>Mark</td>
@@ -227,6 +306,12 @@
                                                     <td>09 / 07 / 2018</td>
                                                     <td>
                                                         Available
+                                                    </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -237,6 +322,12 @@
                                                     <td>
                                                         Available
                                                     </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
+                                                    </td>
                                                 <tr>
                                                     <th scope="row">4</th>
                                                     <td>Mark</td>
@@ -244,6 +335,12 @@
                                                     <td>09 / 07 / 2018</td>
                                                     <td>
                                                         Unvailable
+                                                    </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
                                                     </td>
                                                     
                                             </tbody>
@@ -262,7 +359,7 @@
                                                     <th scope="col">Contact</th>
                                                     <th scope="col">Date</th>
                                                     <th scope="col">Status</th>
-                                                    
+                                                    <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -274,6 +371,12 @@
                                                     <td>
                                                         Available
                                                     </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
+                                                    </td>
                                                 <tr>
                                                     <th scope="row">2</th>
                                                     <td>Mark</td>
@@ -281,6 +384,12 @@
                                                     <td>09 / 07 / 2018</td>
                                                     <td>
                                                         Available
+                                                    </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -291,6 +400,12 @@
                                                     <td>
                                                         Available
                                                     </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
+                                                    </td>
                                                 <tr>
                                                     <th scope="row">4</th>
                                                     <td>Mark</td>
@@ -298,6 +413,12 @@
                                                     <td>09 / 07 / 2018</td>
                                                     <td>
                                                         Unvailable
+                                                    </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
                                                     </td>
                                                     
                                             </tbody>
@@ -316,7 +437,7 @@
                                                     <th scope="col">Contact</th>
                                                     <th scope="col">Date</th>
                                                     <th scope="col">Status</th>
-                                                    
+                                                    <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -328,6 +449,12 @@
                                                     <td>
                                                         Unvailable
                                                     </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
+                                                    </td>
                                                 <tr>
                                                     <th scope="row">2</th>
                                                     <td>Mark</td>
@@ -335,6 +462,12 @@
                                                     <td>09 / 07 / 2018</td>
                                                     <td>
                                                         Available
+                                                    </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -345,6 +478,12 @@
                                                     <td>
                                                         Available
                                                     </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
+                                                    </td>
                                                 <tr>
                                                     <th scope="row">4</th>
                                                     <td>Mark</td>
@@ -352,6 +491,12 @@
                                                     <td>09 / 07 / 2018</td>
                                                     <td>
                                                         Available
+                                                    </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
                                                     </td>
                                                     
                                             </tbody>
@@ -370,7 +515,7 @@
                                                     <th scope="col">Contact</th>
                                                     <th scope="col">Date</th>
                                                     <th scope="col">Status</th>
-                                                    
+                                                    <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -382,6 +527,12 @@
                                                     <td>
                                                         Available
                                                     </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
+                                                    </td>
                                                 <tr>
                                                     <th scope="row">2</th>
                                                     <td>Mark</td>
@@ -389,6 +540,12 @@
                                                     <td>09 / 07 / 2018</td>
                                                     <td>
                                                         Available
+                                                    </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -399,6 +556,12 @@
                                                     <td>
                                                         Unvailable
                                                     </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
+                                                    </td>
                                                 <tr>
                                                     <th scope="row">4</th>
                                                     <td>Mark</td>
@@ -406,6 +569,12 @@
                                                     <td>09 / 07 / 2018</td>
                                                     <td>
                                                         Available
+                                                    </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
                                                     </td>
                                                     
                                             </tbody>
@@ -424,7 +593,7 @@
                                                     <th scope="col">Contact</th>
                                                     <th scope="col">Date</th>
                                                     <th scope="col">Status</th>
-                                                    
+                                                    <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -436,6 +605,12 @@
                                                     <td>
                                                         Available
                                                     </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
+                                                    </td>
                                                 <tr>
                                                     <th scope="row">2</th>
                                                     <td>Mark</td>
@@ -443,6 +618,12 @@
                                                     <td>09 / 07 / 2018</td>
                                                     <td>
                                                         Available
+                                                    </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -453,6 +634,12 @@
                                                     <td>
                                                         Unvailable
                                                     </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
+                                                    </td>
                                                 <tr>
                                                     <th scope="row">4</th>
                                                     <td>Mark</td>
@@ -460,6 +647,12 @@
                                                     <td>09 / 07 / 2018</td>
                                                     <td>
                                                         Available
+                                                    </td>
+                                                    <td>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                            
+                                                        </ul>
                                                     </td>
                                                     
                                             </tbody>
@@ -477,7 +670,7 @@
                     <div class="single-table">
                     <h4>Assigning</h4><br><br>
                                     <div class="table-responsive" style="table-layout: auto;">
-                                        <table id="assign-table" class="table table-hover progress-table text-center">
+                                        <table id="assign-table1" class="table table-hover progress-table text-center">
                                             <thead class="text-uppercase">
                                                 <tr>
                                                     <th scope="col">ID</th>
@@ -485,7 +678,6 @@
                                                     <th scope="col">Contact</th>
                                                     <th scope="col">Date</th>
                                                     <th scope="col">Status</th>
-                                                    
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -522,24 +714,25 @@
                                                     <td>
                                                         Available
                                                     </td>
-                                                    
                                             </tbody>
                                         </table>
-                                    </div>
-                                    <button class="continue-application">
-                                        <div>
-                                            <div class="pencil"></div>
-                                            <div class="folder">
-                                                <div class="top">
-                                                    <svg viewBox="0 0 24 27">
-                                                        <path d="M1,0 L23,0 C23.5522847,-1.01453063e-16 24,0.44771525 24,1 L24,8.17157288 C24,8.70200585 23.7892863,9.21071368 23.4142136,9.58578644 L20.5857864,12.4142136 C20.2107137,12.7892863 20,13.2979941 20,13.8284271 L20,26 C20,26.5522847 19.5522847,27 19,27 L1,27 C0.44771525,27 6.76353751e-17,26.5522847 0,26 L0,1 C-6.76353751e-17,0.44771525 0.44771525,1.01453063e-16 1,0 Z"></path>
-                                                    </svg>
-                                                </div>
-                                                <div class="paper"></div>
-                                            </div>
-                                        </div>
-                                        Assign Employee
-                                    </button>
+                                    </div><br>
+                                    <div class="text-right"> <!-- This div aligns its content to the right -->
+            <button class="continue-application">
+                <div>
+                    <div class="pencil"></div>
+                    <div class="folder">
+                        <div class="top">
+                            <svg viewBox="0 0 24 27">
+                                <path d="M1,0 L23,0 C23.5522847,-1.01453063e-16 24,0.44771525 24,1 L24,8.17157288 C24,8.70200585 23.7892863,9.21071368 23.4142136,9.58578644 L20.5857864,12.4142136 C20.2107137,12.7892863 20,13.2979941 20,13.8284271 L20,26 C20,26.5522847 19.5522847,27 19,27 L1,27 C0.44771525,27 6.76353751e-17,26.5522847 0,26 L0,1 C-6.76353751e-17,0.44771525 0.44771525,1.01453063e-16 1,0 Z"></path>
+                            </svg>
+                        </div>
+                        <div class="paper"></div>
+                    </div>
+                </div>
+                Assign Employee
+            </button>
+        </div>
 
 
                                 </div>

@@ -75,15 +75,6 @@
                         </div>
                     </div>
                     <!-- Progress Table end -->
-
-
-
-
-
-
-
-
-
                     </div>
                     
 <!-- Employee selection dropdown -->
@@ -166,18 +157,9 @@ $(document).ready(function() {
         });
     });
 });
-
-</script>
-                                        
+</script>                                    
                     <!-- Bootstrap Grid end -->
                     <br><br><br><br><br>
-
-
-
-
-
-
-
 <?php include 'nav-and-footer/footer-area.php';?> 
     
 </body>
