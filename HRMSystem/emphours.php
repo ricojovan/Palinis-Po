@@ -5,7 +5,7 @@ include 'db_connection.php';
 // Function to calculate total hours worked for an employee
 function calculateTotalHours($conn, $employeeName) {
     // Query to retrieve time in and time out records for the employee
-    $sql = "SELECT timein, timeout FROM employees WHERE full_name='$employeeName' ORDER BY timein";
+    $sql = "SELECT timein, timeout FROM attendance_logs WHERE name='$employeeName' ORDER BY timein";
 
     // Execute the query
     $result = $conn->query($sql);
@@ -32,7 +32,7 @@ function calculateTotalHours($conn, $employeeName) {
     $result->close();
 
     // Get the old total hours from the database
-    $sql = "SELECT total_hours FROM employees WHERE full_name='$employeeName'";
+    $sql = "SELECT total_hours FROM attendance_logs WHERE name='$employeeName'";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
     $oldTotalHours = $row['total_hours'];
@@ -51,7 +51,7 @@ $employeeName = $_POST['employeeName'];
 $newTotalHours = calculateTotalHours($conn, $employeeName);
 
 // Update the total_hours column in the clients table
-$updateSql = "UPDATE employees SET total_hours = $newTotalHours WHERE full_name = '$employeeName'";
+$updateSql = "UPDATE attendance_logs SET total_hours = $newTotalHours WHERE name = '$employeeName'";
 if ($conn->query($updateSql) === TRUE) {
     // Check if the request is an AJAX request
     if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {

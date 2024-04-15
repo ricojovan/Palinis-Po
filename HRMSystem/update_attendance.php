@@ -10,7 +10,7 @@ function updateTimeOut($conn, $employeeName) {
     $attendance1_result = $conn->query($sql_attendance1);
 
     // Update timeout and empstatus in clients table
-    $sql_clients = "UPDATE employees SET timeout='$timestamp', empstatus='Unavailable' WHERE full_name='$employeeName' AND timeout='00:00:00'";
+    $sql_clients = "UPDATE employees SET  empstatus='Unavailable' WHERE full_name='$employeeName";
     $clients_result = $conn->query($sql_clients);
 
     // Check if both queries executed successfully
@@ -31,3 +31,5 @@ updateTimeOut($conn, $employeeName);
 // Close connection
 $conn->close();
 ?>
+
+
