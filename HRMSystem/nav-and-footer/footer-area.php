@@ -331,18 +331,20 @@
             });
         });
 
-        $(document).ready( function () {
-    $('#dataTable3').DataTable();
-  });
+    $(document).ready(function() {
+    var tableIds = ['#dataTable3', '#TimeIn', '#TimeOut' , '#assign-table'];
+    tableIds.forEach(function(id) {
+        $(id).DataTable();
+    });
+});
 
+$(document).ready( function () {
+    var groups = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+    groups.forEach(function(group) {
+        $('#group-' + group).DataTable();
+    });
+});
 
-  $(document).ready( function () {
-    $('#TimeIn').DataTable();
-  });
-
-  $(document).ready( function () {
-    $('#TimeOut').DataTable();
-  });
     </script>
     </body>
 </html>
