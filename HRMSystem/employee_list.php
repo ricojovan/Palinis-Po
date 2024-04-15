@@ -669,7 +669,7 @@
                     
                     <div class="single-table">
                     <h4>Assigning</h4><br><br>
-                                    <div class="table-responsive" style="table-layout: auto;">
+                                    <div class="table-responsive">
                                         <table id="assign-table1" class="table table-hover progress-table text-center">
                                             <thead class="text-uppercase">
                                                 <tr>
