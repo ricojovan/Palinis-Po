@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Valid credentials for employee, redirect to employee list
             session_start(); // Start session if not already started
             $_SESSION['username'] = $username;
-            header("Location: employee_list.php");
+            header("Location: employee-interface.php");
             exit();
         } else {
             // Invalid credentials for both admin and employee

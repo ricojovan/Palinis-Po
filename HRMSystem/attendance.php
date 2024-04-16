@@ -1,44 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <body>
-
-
 <?php include 'nav-and-footer/header-nav.php';?>
-
 <!-- Bootstrap Grid start -->
-<div class="col-12 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="header-title">Bootstrap Grid System</div>
-                                
-                                <!-- Start 6 column grid system -->
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        
-                                   <!-- Progress Table start -->
+  <div class="col-12 mt-5">
+      <div class="card">
+        <div class="card-body">
+          <div class="header-title">Attendance List</div>
+            <!-- Start 12 column grid system -->
+              <div class="row">
+                <div class="col-12">
+                  <!-- Progress Table start -->
                     <div class="col-12 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title">Time In</h4>
-                                <div class="single-table">
-                                    <div class="table-responsive">
-                                        <table id="TimeIn" class="table table-hover progress-table text-center">
-                                            <thead class="text-uppercase">
-                                                <tr>
-                                                    <th scope="col">EMP ID</th>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">Time In</th>
-                                                    <th scope="col">Time Out</th>
-                                                    <th scope="col">Date</th>
-                                                    <th scope="col">Employee Status</th>
-                                                    <th scope="col">Total Hours</th>
-                                                    
-                                                   
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                            <?php
-include 'db_connection.php';
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="single-table">
+                            <div class="table-responsive">
+                              <table id="TimeIn" class="table table-hover progress-table text-center">
+                                <thead class="text-uppercase">
+                                  <tr>
+                                      <th scope="col">EMP ID</th>
+                                      <th scope="col">Name</th>
+                                      <th scope="col">Time In</th>
+                                      <th scope="col">Time Out</th>
+                                      <th scope="col">Date</th>
+                                      <th scope="col">Employee Status</th>
+                                      <th scope="col">Total Hours</th>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+<?php include 'db_connection.php';
 
 // SQL query
 $sql = "SELECT e.emp_id, e.full_name, a.timein, a.timeout, a.date, e.empstatus, a.total_hours
@@ -83,7 +76,12 @@ $conn->close();
                         </div>
                     </div>
                     <!-- Progress Table end -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <!-- Bootstrap Grid end -->
                     
 
                     <!-- Employee selection dropdown -->
@@ -171,6 +169,5 @@ $conn->close();
                     <!-- Bootstrap Grid end -->
                     <br><br><br><br><br>
 <?php include 'nav-and-footer/footer-area.php';?> 
-    
 </body>
 </html>
