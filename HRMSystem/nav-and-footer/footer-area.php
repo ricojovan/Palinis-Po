@@ -290,20 +290,22 @@
             $('#validationCustom01').focus();
 
             // Prepare the HTML content to display in the <div>
-            var divContent = '<h4 class="mb-3">' + fullName + '</h4>';
-            divContent += '<p>Emp ID: ' + empId + '<br>';
-            divContent += 'Username: ' + username + '<br>';
-            divContent += 'Position: ' + position + '<br>';
-            divContent += 'Cellphone Number: ' + phone + '<br>';
+            var divContent = '<p class="text-xl font-serif font-semibold text-[#434955]">' + fullName + '</p>';
+            // divContent += '<p>Emp ID: ' + empId + '<br>';
+            divContent += '<p class="text-sm font-semibold text-[#434955]">' + position + '</p>';
+            var divContent = '<p>+' + phone + '</p>';
+            divContent += 'username: ' + username + '<br>';
             divContent += 'Date Hire: ' + startDate + '<br>';
-            divContent += 'Age: ' + age + '<br>';
+            // divContent += 'Age: ' + age + '<br>';
             divContent += 'Group: ' + group + '</p>';
 
             // Update the content of the <div> with the prepared HTML
-            $('.media-body').html(divContent);
-
+            $('.f-name').html(divContent);
+            
             // Optionally, you can show/hide or animate the <div> to make it visible
-            $('.media-body').slideDown(); // Example: Use a slide-down animation to reveal the updated content
+            
+            $('.f-name').slideDown(); // Example: Use a slide-down animation to reveal the updated content
+            
         });
 
             // Delete button click handler

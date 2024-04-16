@@ -147,11 +147,13 @@
       ></div>
     </div>
   </div>
-  <div class="headings *:text-center *:leading-4">
-    <div class="f-name"><p class="text-xl font-serif font-semibold text-[#434955]">FIRST NAME LAST NAME</p></div>
+
+  
+  <div class="headings *:text-center *:leading-4 f-name">
+    <p class="text-xl font-serif font-semibold text-[#434955]">FIRST NAME LAST NAME</p>
     <p class="text-sm font-semibold text-[#434955]">POSITION</p>
   </div>
-  <div class="w-full items-center justify-center flex">
+  <div class="w-full items-center justify-center flex ">
     <ul
       class="flex flex-col items-start gap-2 has-[:last]:border-b-0 *:inline-flex *:gap-2 *:items-center *:justify-center *:border-b-[1.5px] *:border-b-stone-700 *:border-dotted *:text-xs *:font-semibold *:text-[#434955] pb-3"
     >
@@ -165,7 +167,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
 </svg>
-        <div class="username"><p>Username</p></div>
+        <p>Username</p>
       </li>
       <li>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -184,8 +186,7 @@
   <hr class="w-full group-hover:h-5 h-3 bg-[#58b0e0] group-hover:transition-all group-hover:duration-300 transition-all duration-300"/>
 </div>
 </div>
-</div>
-</div></div>
+</div></div></div>
 <!-- INFORMATION CARD END -->
       <div class="col-sm-8">
         <div class="col-12">
@@ -383,5 +384,6 @@
     <?php include 'nav-and-footer/footer-area.php';?>  
 
     <script src="https://cdn.tailwindcss.com"></script>
+    
 </body>
 </html>
