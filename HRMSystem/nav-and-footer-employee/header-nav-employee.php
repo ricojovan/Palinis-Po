@@ -290,29 +290,13 @@
                             <nav>
                                 <ul id="nav_menu">
                                     <li class="active">
-                                        <a href="dashboard.php"><i class='fa fa-bar-chart-o'></i><span>dashboard</span></a>
-                                    </li>
-                                    
-                                    
-                                    <li class="mega-menu">
-                                        <a href="employee_list.php"><i class='fa fa-users'></i><span>Employee List</span></a>
-                                        <ul class="submenu">
-                                            <li><a href="#">Group A</a></li>
-                                            <li><a href="#">Group B</a></li>
-                                            <li><a href="#">Group C</a></li>
-                                            <li><a href="#">Group D</a></li>
-                                            <li><a href="#">Group E</a></li>
-                                            <li><a href="employee_list.php">View All</a></li>
-                                        </ul>
+                                        <a href="#"><i class='fa fa-bar-chart-o'></i><span>Attendance</span></a>
                                     </li>
                                     <li>
-                                        <a href="attendance.php"><i class='fa fa-th-list'></i> <span>Attendance List</span></a>
+                                        <a href="#"><i class='fa fa-th-list'></i> <span>Payslip</span></a>
                                     </li>
                                     <li>
-                                        <a href="register.php"><i class='fa fa-sign-in'></i><span>Register</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class='fa fa-history'></i><span>History</span></a>
+                                        <a href="#"><i class='fa fa-sign-in'></i><span>Request</span></a>
                                     </li>
                                 </ul>
                             </nav>
