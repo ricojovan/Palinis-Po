@@ -153,7 +153,7 @@
     <p class="text-xl font-serif font-semibold text-[#434955]">FIRST NAME LAST NAME</p>
     <p class="text-sm font-semibold text-[#434955]">POSITION</p>
   </div>
-  <div class="w-full items-center justify-center flex ">
+  <div class="w-full items-center justify-center flex">
     <ul
       class="flex flex-col items-start gap-2 has-[:last]:border-b-0 *:inline-flex *:gap-2 *:items-center *:justify-center *:border-b-[1.5px] *:border-b-stone-700 *:border-dotted *:text-xs *:font-semibold *:text-[#434955] pb-3"
     >

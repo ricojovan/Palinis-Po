@@ -10,37 +10,36 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/CSS/login-signin_styling.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
 </head>
 
 <body>
-    
-    <!-- <div class="container" id="container">
-        <div class="form-container sign-up-container">
-            <form action="#">
-                <h1>Request Account</h1>
-                <span>This will notify the admin to create your account.</span>
-                <input type="text" placeholder="Full Name" />
-                <input type="email" placeholder="Username" />
-                <input type="password" placeholder="Password" />
-                
-                <button>Sign Up</button>
-            </form>
-        </div> -->
-        <!-- <div class="form-container sign-in-container">
-            <form action="#">
-                <h1>Sign in</h1>
-                <input type="email" placeholder="Username" />
-                <input type="password" placeholder="Password" />
-
-                <button>Sign In</button>
-                
-            </form>
-        </div> -->
-
-
+<div class="flex justify-center"> 
+<div class="login-card-1">
+  <div class="card-header-1">
+    <h1>Login</h1>
+  </div>
+  <div class="card-body-1">
+    <form action="login.php" method="post">
+      <div class="form-group-1">
+        <label for="username">Username</label>
+        <input type="text" name="login_username" required="">
+      </div>
+      <div class="form-group-1">
+        <label for="password">Password</label>
+        <input type="password" name="login_password" required="">
+      </div>
+      <div class="form-group-1">
+        <button type="submit" class="login-button">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
         <!-- TRY LANGGGGGGGGGGGGGGGGGGGGG -->
 
-        <div class="container">
+        <!-- <div class="container">
 
         <div class="form-container sign-in-container">
             <form action="login.php" method="post">
@@ -49,7 +48,7 @@
                 <input type="password" name="login_password" placeholder="Password" required />
                 <button type="submit">Sign In</button>
             </form>
-        </div>
+        </div> -->
     
     <script src="assets/JS/main.js"></script>
 </body>
