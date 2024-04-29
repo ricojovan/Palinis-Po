@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <body>
 <?php include 'nav-and-footer/header-nav.php';?>
 
@@ -51,63 +53,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
+                                                
                                                     
                                             </tbody>
                                         </table>
@@ -129,63 +75,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Unavailable
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
+                                                
                                                     
                                             </tbody>
                                         </table>
@@ -207,63 +97,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
+                                                
                                                     
                                             </tbody>
                                         </table>
@@ -285,63 +119,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Unvailable
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
+                                                
                                                     
                                             </tbody>
                                         </table>
@@ -363,63 +141,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Unvailable
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
+                                                
                                                     
                                             </tbody>
                                         </table>
@@ -441,63 +163,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Unvailable
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
+                                               
                                                     
                                             </tbody>
                                         </table>
@@ -519,63 +185,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Unvailable
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
+                                                
                                                     
                                             </tbody>
                                         </table>
@@ -597,63 +207,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Unvailable
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>Mark</td>
-                                                    <td>639521458751</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        Available
-                                                    </td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            
-                                                        </ul>
-                                                    </td>
+                                                
                                                     
                                             </tbody>
                                         </table>
@@ -744,8 +298,32 @@
                     <!-- Bootstrap Grid end -->
 
 <?php include 'nav-and-footer/footer-area.php';?> 
-    
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function() {
+                $('.nav-link').on('click', function(e) {
+                    e.preventDefault();
+                    var groupId = $(this).attr('href'); // Get the href attribute (group ID)
+                    var group = groupId.substring(1); // Extract group ID (remove the '#')
+
+                    // AJAX request to fetch and populate table
+                    $.ajax({
+                        url: 'display_employees.php',
+                        type: 'POST',
+                        data: { group: group },
+                        success: function(response) {
+                            $(groupId + ' tbody').html(response); // Populate the table body with fetched data
+                        },
+                        error: function() {
+                            alert('Error fetching data');
+                        }
+                    });
+                });
+            });
+    </script>
 </body>
+
+
 </html>
 
 
