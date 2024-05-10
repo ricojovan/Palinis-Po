@@ -9,6 +9,13 @@
 /*Medium Desktop Device*/
 
 @media screen and (min-width: 1200px) and (max-width: 1440px) {
+    .horizontal-menu ul li a {
+        padding: 10px 10px;
+    }
+    .seo-fact #seolinechart3,
+    .seo-fact #seolinechart4 {
+        max-width: 144px;
+    }
     .col-ml-6 {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 50%;

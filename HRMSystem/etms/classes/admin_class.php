@@ -127,7 +127,7 @@ class Admin_Class
         unset($_SESSION['admin_name']);
         unset($_SESSION['security_key']);
         unset($_SESSION['user_role']);
-        header('Location: index.php');
+        header('Location: login_and_sign-in_form.php');
     }
 
 /*----------- add_new_user--------------*/
@@ -380,7 +380,7 @@ class Admin_Class
 
 		}
 
-
+		
 	/* =================Attendance Related===================== */
 	public function add_punch_in($data){
 		// data insert 

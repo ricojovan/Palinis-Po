@@ -1,173 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
-
-
-<body>
-<?php include 'nav-and-footer/header-nav.php';?>
-<!-- Bootstrap Grid start -->
-  <div class="col-12 mt-5">
-      <div class="card">
-        <div class="card-body">
-          <div class="header-title">Attendance List</div>
-            <!-- Start 12 column grid system -->
-              <div class="row">
-                <div class="col-12">
-                  <!-- Progress Table start -->
-                    <div class="col-12 mt-5">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="single-table">
-                            <div class="table-responsive">
-                              <table id="TimeIn" class="table table-hover progress-table text-center">
-                                <thead class="text-uppercase">
-                                  <tr>
-                                      <th scope="col">EMP ID</th>
-                                      <th scope="col">Name</th>
-                                      <th scope="col">Time In</th>
-                                      <th scope="col">Time Out</th>
-                                      <th scope="col">Date</th>
-                                      <th scope="col">Employee Status</th>
-                                      <th scope="col">Total Hours</th>
-                                  </tr>
-                                  </thead>
-                                  <tbody>
-<?php include 'db_connection.php';
-
-// SQL query
-$sql = "SELECT e.emp_id, e.full_name, a.timein, a.timeout, a.date, e.empstatus, a.total_hours
-FROM employees AS e
-INNER JOIN (
-    SELECT name, timein, timeout, date, total_hours,
-           ROW_NUMBER() OVER (PARTITION BY name ORDER BY date DESC, timein DESC) AS rn
-    FROM attendance_logs
-) AS a ON e.full_name = a.name AND a.rn = 1;
-";
-
-// Execute the query
-$result = $conn->query($sql);
-
-// Check if any rows were returned
-if ($result->num_rows > 0) {
-    // Output data of each row
-    while ($row = $result->fetch_assoc()) {
-        echo "<tr>";
-        echo "<td>" . $row["emp_id"] . "</td>";
-        echo "<td>" . $row["full_name"] . "</td>";
-        echo "<td>" . $row["timein"] . "</td>";
-        echo "<td>" . $row["timeout"] . "</td>";
-        echo "<td>" . $row["date"] . "</td>";
-        echo "<td>" . $row["empstatus"] . "</td>";
-        echo "<td>" . $row["total_hours"] . "</td>";
-        echo "</tr>";
+<?php
+require_once('./../../config.php');
+if(isset($_GET['id']) && $_GET['id'] > 0){
+    $qry = $conn->query("SELECT pp.*, CONCAT(e.last_name, ', ' , e.first_name,' ', COALESCE(e.middle_name,'')) as fullname, e.company_id, d.name as department, p.name as position from payslip_list pp inner join `employee_list` e on pp.employee_id = e.id inner join department_list d on e.department_id = d.id inner join position_list p on e.position_id = p.id  where pp.id = '{$_GET['id']}' ");
+    if($qry->num_rows > 0){
+        foreach($qry->fetch_assoc() as $k => $v){
+            $$k=$v;
+        }
+        if(isset($payroll_id)){
+            $payroll = $conn->query("SELECT * FROM payroll_list where id = '{$payroll_id}'");
+            if($payroll->num_rows > 0){
+                foreach($payroll->fetch_array() as $k=> $v){
+                    if(!is_numeric($k))
+                        $_payroll[$k] = $v;
+                }
+            }
+        }
     }
-} else {
-    echo "<tr><td colspan='7'>0 results</td></tr>";
 }
-
-// Close connection
-$conn->close();
 ?>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Progress Table end -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Bootstrap Grid end -->
-                    
-
-                    <!-- Employee selection dropdown -->
-                    <select id="employeeSelect" class="form-control">
-                        <option value="">Select Employee</option>
-                        <?php
-                        include 'db_connection.php';
-                        // Read all unique employee names from the clients table
-                        $sql = "SELECT DISTINCT full_name FROM employees";
-                        $result = $conn->query($sql);
-
-                        if ($result->num_rows > 0) {
-                            while ($row = $result->fetch_assoc()) {
-                                echo "<option value='" . $row['full_name'] . "'>" . $row['full_name'] . "</option>";
-                            }
-                        } else {
-                            echo "<option value='' disabled>No employees found</option>";
-                        }
-                        $conn->close();
-                        ?>
-                    </select>
-                    <!-- Button for Time In -->
-                    <button id="timeInBtn" class="btn btn-primary">Time In</button>
-                    <!-- Button for Time Out -->
-                    <button id="timeOutBtn" class="btn btn-primary">Time Out</button>
-                    <!-- Button for Time Out -->
-
-                    <script>
-                    $(document).ready(function() {
-                        // Time In button click handler
-                        $('#timeInBtn').click(function() {
-                            var selectedEmployee = $('#employeeSelect').val();
-                            if (selectedEmployee === "") {
-                                alert("Please select an employee.");
-                                return;
-                            }
-
-                            // AJAX request to record time in
-                            $.ajax({
-                                type: "POST",
-                                url: "record_attendance.php",
-                                data: { employeeName: selectedEmployee },
-                                success: function(response) {
-                                    alert(response); // Alert the response from the server
-                                    // Reload the page to update the table
-                                    location.reload();
-                                }
-                            });
-                        });
-
-                        // Time Out button click handler
-                        $('#timeOutBtn').click(function() {
-                            var selectedEmployee = $('#employeeSelect').val();
-                            if (selectedEmployee === "") {
-                                alert("Please select an employee.");
-                                return;
-                            }
-
-                            // AJAX request to delete attendance record
-                            $.ajax({
-                                type: "POST",
-                                url: "update_attendance.php",
-                                data: { employeeName: selectedEmployee },
-                                success: function(response) {
-                                    // Alert the response from the server
-                                    // Reload the page to update the table
-                                    location.reload();
-                                    
-                                    // After successfully updating attendance, make AJAX request to calculate total hours
-                                    $.ajax({
-                                        type: "POST",
-                                        url: "emphours.php",
-                                        data: { employeeName: selectedEmployee },
-                                        success: function(totalHours) {
-                                            alert("Time out success "); // Alert the total hours worked
-                                            location.reload();
-                                        }
-                                    });
-                                }
-                            });
-                        });
-                    });
-                    </script>                  
-                  
-                    <!-- Bootstrap Grid end -->
-                    <br><br><br><br><br>
-<?php include 'nav-and-footer/footer-area.php';?> 
-</body>
-</html>
+<style>
+    #uni_modal .modal-footer{
+        display:none;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center border m-0 font-weight-bold">Payroll Details</div>
+        <div class="col-2 border p-1  font-weight-bold">Code</div>
+        <div class="col-4 border p-1"><?= isset($_payroll['code']) ? $_payroll['code'] : '' ?></div>
+        <div class="col-2 border p-1  font-weight-bold">Type</div>
+        <div class="col-4 border p-1">
+            <?php 
+                $_payroll['type'] = isset($_payroll['type']) ? $_payroll['type'] : '';
+                switch($_payroll['type']){
+                    case 1:
+                        echo 'Monthly';
+                        break;
+                    case 2:
+                        echo 'Semi-Monthly';
+                        break;
+                    case 3:
+                        echo 'Daily';
+                        break;
+                    default:
+                        echo 'N/A';
+                        break;
+                }
+            ?>
+        </div>
+        <div class="col-2 border p-1  font-weight-bold">Cut-off Start</div>
+        <div class="col-4 border p-1"><?= isset($_payroll['start_date']) ? date("M d, Y", strtotime($_payroll['start_date'])) : '' ?></div>
+        <div class="col-2 border p-1  font-weight-bold">Cut-off End</div>
+        <div class="col-4 border p-1"><?= isset($_payroll['end_date']) ? date("M d, Y", strtotime($_payroll['end_date'])) : '' ?></div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center border m-0 font-weight-bold">Employee Details</div>
+        <div class="col-2 border p-1  font-weight-bold">Company ID</div>
+        <div class="col-4 border p-1"><?= $company_id ?></div>
+        <div class="col-2 border p-1  font-weight-bold">Name</div>
+        <div class="col-4 border p-1"><?= ucwords($fullname) ?></div>
+        <div class="col-2 border p-1  font-weight-bold">Department</div>
+        <div class="col-4 border p-1"><?= $department ?></div>
+        <div class="col-2 border p-1  font-weight-bold">Position</div>
+        <div class="col-4 border p-1"><?= ucwords($position) ?></div>
+    </div>
+    
+    <div class="row">
+        <div class="col-4 border p-1">Details</div>
+        <div class="col-4 border p-1">Allowances</div>
+        <div class="col-4 border p-1">Deduction</div>
+        
+        <div class="col-4 border p-1">
+            <dl class="row">
+                <dt class="col-7">Basic Salary</dt>
+                <dd class="text-right col-5"><?= isset($base_salary) ? number_format($base_salary,2) : 0.00 ?></dd>
+                <dt class="col-7">Attendace <small>(days)</small></dt>
+                <dd class="text-right col-5"><?= isset($days_present) ? number_format($days_present + $days_absent) : 0 ?></dd>
+                <dt class="col-7">Absences <small>(days)</small></dt>
+                <dd class="text-right col-5"><?= isset($days_absent) ? number_format($days_absent) : 0 ?></dd>
+                <dt class="col-7">Late/Undertime <small>(mins)</small></dt>
+                <dd class="text-right col-5"><?= isset($tardy_undertime) ? number_format($tardy_undertime) : 0 ?></dd>
+            </dl>
+        </div>
+        <div class="col-4 border p-1">
+            <dl class="row">
+                <?php 
+                $allowances = $conn->query("SELECT * FROM `allowance_list` where payslip_id = '{$id}'");
+                while($row = $allowances->fetch_assoc()):
+                ?>
+                    <dt class="col-7"><?= $row['name'] ?></dt>
+                    <dd class="text-right col-5"><?= number_format($row['amount'],2) ?></dd>
+                <?php endwhile; ?>
+                <dt class="col-7">Total</dt>
+                <dd class="text-right col-5"><?= isset($total_allowance) ?  number_format($total_allowance,2) : 0.00 ?></dd>
+            </dl>
+        </div>
+        <div class="col-4 border p-1">
+            <dl class="row">
+                <?php 
+                $deductions = $conn->query("SELECT * FROM `deduction_list` where payslip_id = '{$id}'");
+                while($row = $deductions->fetch_assoc()):
+                ?>
+                    <dt class="col-7"><?= $row['name'] ?></dt>
+                    <dd class="text-right col-5"><?= number_format($row['amount'],2) ?></dd>
+                <?php endwhile; ?>
+                <dt class="col-7">Total</dt>
+                <dd class="text-right col-5"><?= isset($total_deduction) ?  number_format($total_deduction,2) : 0.00 ?></dd>
+            </dl>
+        </div>
+    </div>
+    <div class="d-flex w-100 mt-3">
+        <div class="col-auto flex-shrink-1 flex-grow-1 text-right h4"><b>Net Income:</b></div>
+        <div class="col-auto px-3 h4"><b><?= number_format($net,2) ?></b></div>
+    </div>
+    <hr>
+    <div class="clear-fix mb-3"></div>
+    <div class="text-right">
+        <button class="btn btn-dark bg-gradient-dark btn-flat" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+    </div>
+</div>

@@ -1,19 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body>
 <?php
-
-require 'authentication.php'; // admin authentication check 
-
-// auth check
-$user_id = $_SESSION['admin_id'];
-$user_name = $_SESSION['name'];
-$security_key = $_SESSION['security_key'];
-if ($user_id == NULL || $security_key == NULL) {
-    header('Location: index.php');
-}
-
-// check admin
-$user_role = $_SESSION['user_role'];
-
-
 if(isset($_GET['delete_task'])){
   $action_id = $_GET['task_id'];
   
@@ -27,11 +17,23 @@ if(isset($_POST['add_task_post'])){
 }
 
 $page_name="Task_Info";
-include("include/sidebar.php");
+include 'nav-and-footer/header-nav.php';
 // include('ems_header.php');
 
 
 ?>
+<!-- Bootstrap Grid start -->
+<div class="col-12 mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="header-title">Bootstrap Grid System</div>
+                                
+                                <!-- Start 12 column grid system -->
+                                <div class="row">
+                                    <div class="col-12">
+                                        
+
+
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
@@ -110,8 +112,6 @@ include("include/sidebar.php");
       </div>
     </div>
   </div>
-
-
 
 
 
@@ -213,7 +213,7 @@ include("include/sidebar.php");
 
 <?php
 
-include("include/footer.php");
+include("etms/include/footer.php");
 
 
 
@@ -231,3 +231,23 @@ include("include/footer.php");
   });
 
 </script>
+
+
+
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bootstrap Grid end -->
+
+
+<?php include 'nav-and-footer/footer-area.php';?> 
+</body>
+
+
+</html>

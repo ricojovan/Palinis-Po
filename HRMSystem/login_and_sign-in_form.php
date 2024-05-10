@@ -1,3 +1,24 @@
+<?php
+
+$page_name="Login";
+require 'etms\authentication.php'; // admin authentication check 
+
+// auth check
+if(isset($_SESSION['admin_id'])){
+  $user_id = $_SESSION['admin_id'];
+  $user_name = $_SESSION['admin_name'];
+  $security_key = $_SESSION['security_key'];
+  if ($user_id != NULL && $security_key != NULL) {
+    header('Location: dashboard.php');
+  }
+}
+
+if(isset($_POST['login_btn'])){
+ $info = $obj_admin->admin_login_check($_POST);
+}
+
+// $page_name="Login";
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,17 +35,20 @@
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="login.php" method="post" class="sign-in-form">
+          <form action="" method="post" class="sign-in-form">
             <h2 class="title">Sign in</h2>
+            <?php if(isset($info)){ ?>
+			<h5 class="alert alert-danger"><?php echo $info; ?></h5>
+			<?php } ?>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" name="login_username" required="" placeholder="Username" />
+              <input type="text" placeholder="Username" name="username" required />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" name="login_password" required="" placeholder="Password" />
+              <input type="password" placeholder="Password" name="admin_password" required/>
             </div>
-            <button type="submit" class="btn solid login-button" >Login</button>
+            <button type="submit" name="login_btn" class="btn solid login-button" >Login</button>
           </form>
         </div>
       </div>

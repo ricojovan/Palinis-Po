@@ -335,22 +335,43 @@
 
 
 
-                   
+        $(document).ready(function() {
+    // Suppress DataTables warnings
+    $.fn.dataTable.ext.errMode = 'none';
 
-
-
-
-    $(document).ready(function() {
-    var tableIds = ['#dataTable3', '#TimeIn', '#TimeOut' , '#assign-table'];
+    var tableIds = ['#dataTable3'];
     tableIds.forEach(function(id) {
-        $(id).DataTable();
+        $(id).DataTable({
+            // Your DataTables options here,
+            initComplete: function(settings, json) {
+                var api = this.api();
+                if (api.page.info().recordsTotal === 0 && settings.jqXHR.responseJSON.error) {
+                    // If there are no records and there is an error, hide the warning message
+                    $('.dataTables_empty').hide();
+                }
+            }
+        });
     });
 });
 
-$(document).ready( function () {
+
+
+$(document).ready(function() {
+    // Suppress DataTables warnings
+    $.fn.dataTable.ext.errMode = 'none';
+
     var groups = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
     groups.forEach(function(group) {
-        $('#group-' + group).DataTable();
+        $('#group-' + group).DataTable({
+            // Your DataTables options here,
+            initComplete: function(settings, json) {
+                var api = this.api();
+                if (api.page.info().recordsTotal === 0 && settings.jqXHR.responseJSON.error) {
+                    // If there are no records and there is an error, hide the warning message
+                    $('.dataTables_empty').hide();
+                }
+            }
+        });
     });
 });
 

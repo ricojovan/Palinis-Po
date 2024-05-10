@@ -1,6 +1,9 @@
 <?php
 
-require 'authentication.php'; // admin authentication check 
+$page_name="Attendance";
+include('nav-and-footer/header-nav.php');
+
+// require 'etms\authentication.php'; // admin authentication check 
 
 // auth check
 $user_id = $_SESSION['admin_id'];
@@ -8,7 +11,7 @@ $user_name = $_SESSION['name'];
 $security_key = $_SESSION['security_key'];
 $user_role = $_SESSION['user_role'];
 if ($user_id == NULL || $security_key == NULL) {
-    header('Location: index.php');
+    header('Location: login_and_sign-in_form.php');
 }
 if(isset($_GET['delete_attendance'])){
   $action_id = $_GET['aten_id'];
@@ -29,15 +32,21 @@ if(isset($_POST['add_punch_out'])){
 
 
 $page_name="Attendance";
-include("include/sidebar.php");
+// include("include/sidebar.php");
 
 //$info = "Hello World";
 ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
-
-
-    <div class="row">
+<!-- Bootstrap Grid start -->
+<div class="col-12 mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <!-- Start 12 column grid system -->
+                                <div class="row">
+                                    <div class="col-12">
+                                        
+                                    <div class="row">
       <div class="col-md-12">
         <div class="well well-custom">
           <div class="row">
@@ -57,7 +66,7 @@ include("include/sidebar.php");
                 <div class="btn-group">
                   <form method="post" role="form" action="">
                     <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-                    <button type="submit" name="add_punch_in" class="btn btn-primary btn-lg rounded" >Clock In</button>
+                    <button type="submit" name="add_punch_in" class="btn btn-primary btn-lg rounded" >Time In</button>
                   </form>
                   
                 </div>
@@ -69,14 +78,14 @@ include("include/sidebar.php");
             
           </div>
 
-          <center><h3>Manage Atendance</h3>  </center>
+          <center><h3>Manage Attendance</h3>  </center>
           <div class="gap"></div>
 
           <div class="gap"></div>
 
           <div class="table-responsive">
-            <table class="table table-codensed table-custom">
-              <thead>
+            <table id="group-d" class="table table-codensed table-custom table-hover">
+              <thead class="text-uppercase bg-primary text-white">
                 <tr>
                   <th>S.N.</th>
                   <th>Name</th>
@@ -84,9 +93,9 @@ include("include/sidebar.php");
                   <th>Out Time</th>
                   <th>Total Duration</th>
                   <th>Status</th>
-                  <?php if($user_role == 1){ ?>
-                  <th>Action</th>
-                  <?php } ?>
+                  <?php if($user_role == 1){ ?> <?php } ?>
+                  <th <?php if($user_role == 2){  ?> style="display:none" <?php } ?>>Action</th>
+                  
                 </tr>
               </thead>
               <tbody>
@@ -140,7 +149,7 @@ include("include/sidebar.php");
                     <form method="post" role="form" action="">
                       <input type="hidden" name="punch_in_time" value="<?php echo $row['in_time']; ?>">
                       <input type="hidden" name="aten_id" value="<?php echo $row['aten_id']; ?>">
-                      <button type="submit" name="add_punch_out" class="btn btn-danger btn-xs rounded" >Clock Out</button>
+                      <button type="submit" name="add_punch_out" class="btn btn-danger btn-xs rounded" >Time Out</button>
                     </form>
                   </td>
                 <?php }else{ ?>
@@ -150,7 +159,7 @@ include("include/sidebar.php");
                 <?php } ?>
                 <?php if($user_role == 1){ ?>
                  <td>
-                  <a title="Delete" href="?delete_attendance=delete_attendance&aten_id=<?php echo $row['aten_id']; ?>" onclick=" return check_delete();"><span class="glyphicon glyphicon-trash"></span></a>
+                  <a title="Delete" href="?delete_attendance=delete_attendance&aten_id=<?php echo $row['aten_id']; ?>" onclick=" return check_delete();"><i class="fa fa-trash-o"></i></a>
                 </td>
                 <?php }else{ ?>
                 <td>
@@ -167,10 +176,23 @@ include("include/sidebar.php");
     </div>
 
 
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bootstrap Grid end -->
+
+    
+
+
 <?php
 
-include("include/footer.php");
-
+include("etms/include/footer.php");
+include("nav-and-footer/footer-area.php");
 
 
 ?>

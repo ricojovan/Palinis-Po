@@ -1,11 +1,25 @@
+<?php
+require 'etms\authentication.php'; // admin authentication check 
+// auth check
+$user_id = $_SESSION['admin_id'];
+$user_name = $_SESSION['name'];
+$security_key = $_SESSION['security_key'];
+if ($user_id == NULL || $security_key == NULL) {
+    header('Location: login_and_sign-in_form.php');
+}
+
+// check admin
+$user_role = $_SESSION['user_role'];
+?>
+
 <!doctype html>
 <html class="no-js" lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>HRM - Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="assets/images/icon/palinis-po-icon.png" type="image/png">
     <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
@@ -33,21 +47,34 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
 
+
+    <link rel="stylesheet" href="./etms//assets/bootstrap-datepicker/css/datepicker.css">
+    <link rel="stylesheet" href="./etms//assets/bootstrap-datepicker/css/datepicker-custom.css">
+
+    
+    
+    <script src="./etms//assets/js/custom.js"></script>
+    <script src="./etms//assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="./etms//assets/bootstrap-datepicker/js/datepicker-custom.js"></script>
+
+    <script type="text/javascript">
+    
+    /* delete function confirmation  */
+    function check_delete() {
+      var check = confirm('Are you sure you want to delete this?');
+        if (check) {
+         
+            return true;
+        } else {
+            return false;
+      }
+    }
+  </script>
+
 </head>
 <body class="body-bg">
 
-                            <?php
-                            session_start(); // Start session if not already started
-
-                            if (!isset($_SESSION['username'])) {
-                            // Redirect to login if no username is found in session
-                            header("Location: login_and_sign-in_form.php");
-                            exit();
-                            }
-
-                            $username = $_SESSION['username'];
-                            ?>
-
+                     
 
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -94,7 +121,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-3">
                         <div class="logo">
-                            <a href="dashboard.php"><img src="assets/images/icon/palinis-po-logo.png" alt="logo"></a>
+                            <a href="<?php if ($user_role == 1) { ?>dashboard.php<?php } ?>"><img src="assets/images/icon/palinis-po-logo.png" alt="logo"></a>
                         </div>
                     </div>
                     <!-- profile info & task notification -->
@@ -246,87 +273,80 @@
                             </ul>
                         </div>
 
-                        <!-- <div class="clearfix d-md-inline-block d-block">
-                            <div class="user-profile m-0">
-                                <img class="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar">
-                                <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Kumkum Rai <i class="fa fa-angle-down"></i></h4>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Message</a>
-                                    <a class="dropdown-item" href="#">Settings</a>
-                                    <a class="dropdown-item" href="login_and_sign-in_form.php">Log Out</a>
-                                </div>
-                            </div>
-                        </div> -->
-
-
-                        <!-- -------------TRYYYYYYYYYYYYYY-------------- -->
-
-
                             <div class="clearfix d-md-inline-block d-block">
                             <div class="user-profile m-0">
                                 <img class="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar">
-                                <h4 class="user-name dropdown-toggle" data-toggle="dropdown"><?php echo $username; ?><i class="fa fa-angle-down"></i></h4>
+                                <h4 class="user-name dropdown-toggle" data-toggle="dropdown"><?php echo $user_name; ?><i class="fa fa-angle-down"></i></h4>
                                 <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Message</a>
                                 <a class="dropdown-item" href="#">Settings</a>
-                                <a class="dropdown-item" href="login_and_sign-in_form.php">Log Out</a>
+                                <a class="dropdown-item" href="?logout=logout">Log Out</a>
                                 </div>
                             </div>
                             </div>
-
-
-                            <!-- ----------------TRYY---------------- -->
                     </div>
                 </div>
             </div>
         </div>
         <!-- main header area end -->
+
+
         <!-- header area start -->
         <div class="header-area header-bottom">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-9  d-none d-lg-block">
                         <div class="horizontal-menu">
+                        <?php
+                        $user_role = $_SESSION['user_role'];
+                        if($user_role == 1){
+                        ?>
                             <nav>
                                 <ul id="nav_menu">
-                                    <li class="active">
+                                    <li <?php if($page_name == "dashboard" ){echo "class=\"active\"";} ?>>
                                         <a href="dashboard.php"><i class='fa fa-bar-chart-o'></i><span>dashboard</span></a>
                                     </li>
-                                    
-                                    
-                                    <li class="mega-menu">
-                                        <a href="employee_list.php"><i class='fa fa-users'></i><span>Employee List</span></a>
-                                        <ul class="submenu">
-                                            <li><a href="#">Group A</a></li>
-                                            <li><a href="#">Group B</a></li>
-                                            <li><a href="#">Group C</a></li>
-                                            <li><a href="#">Group D</a></li>
-                                            <li><a href="#">Group E</a></li>
-                                            <li><a href="employee_list.php">View All</a></li>
-                                        </ul>
+                                    <li <?php if($page_name == "Payroll" ){echo "class=\"active\"";} ?>>
+                                        <a href="payroll.php"><i class='fa fa-history'></i><span>Payroll</span></a>
                                     </li>
-                                    <li>
-                                        <a href="attendance.php"><i class='fa fa-th-list'></i> <span>Attendance List</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="register.php"><i class='fa fa-sign-in'></i><span>Register</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class='fa fa-history'></i><span>History</span></a>
-                                    </li>
+                                    <li <?php if($page_name == "Task_Info" ){echo "class=\"active\"";} ?>><a href="./task-info.php"><i class='fa fa-pencil-square-o'></i>Task Management</a></li>
+                                    <li <?php if($page_name == "Attendance" ){echo "class=\"active\"";} ?>><a href="./attendance-info.php"><i class="fa fa-calendar-check-o"></i>Attendance </a></li>
+                                    <li <?php if($page_name == "Admin" ){echo "class=\"active\"";} ?>><a href="./manage-admin.php"><i class="fa fa-user"></i>Administration</span></a></li>
+                                    <li <?php if($page_name == "Daily-Task-Report" ){echo "class=\"active\"";} ?>><a href="./daily-task-report.php"><i class="fa fa-tasks"></i>Task Report</a></li>
+                                    <li <?php if($page_name == "Daily-Attennce-Report" ){echo "class=\"active\"";} ?>><a href="./daily-attendance-report.php"><i class="fa fa-envelope-o"></i>Attendance Report</a></li>
                                 </ul>
+
+    <?php 
+     }else if($user_role == 2){
+
+      ?>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+  
+      <ul id="nav_menu">
+        <li <?php if($page_name == "Task_Info" ){echo "class=\"active\"";} ?>><a href="task-info.php"><i class='fa fa-pencil-square-o'></i>Task Management</a></li>
+        <li <?php if($page_name == "Attendance" ){echo "class=\"active\"";} ?>><a href="attendance-info.php"><i class="fa fa-calendar-check-o"></i>Attendance</a></li>
+      </ul>
+
+    
+
+      <?php
+
+     }else{
+       header('Location: login_and_sign-in_form.php');
+     }
+
+    ?>
+
+
                             </nav>
                         </div>
                     </div>
+
+
+
+
                     <!-- nav and search button -->
-                    <div class="col-lg-3 clearfix">
-                        <div class="search-box">
-                            <form action="#">
-                                <input type="text" name="search" placeholder="Search..." required>
-                                <i class="ti-search"></i>
-                            </form>
-                        </div>
-                    </div>
+                    
                     <!-- mobile_menu -->
                     <div class="col-12 d-block d-lg-none">
                         <div id="mobile_menu"></div>
